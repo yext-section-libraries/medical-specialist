@@ -1,0 +1,11 @@
+{
+  "id": "medical-specialist-family-medicine",
+  "displayName": "Medical Specialist (Family Medicine)",
+  "vertical": [
+    "HEALTHCARE"
+  ],
+  "purpose": [
+    "CITATION"
+  ],
+  "pageSetType": "ENTITY"
+}

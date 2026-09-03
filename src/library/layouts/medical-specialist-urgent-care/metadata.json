@@ -1,0 +1,11 @@
+{
+  "id": "medical-specialist-urgent-care",
+  "displayName": "Medical Specialist (Urgent Care)",
+  "vertical": [
+    "HEALTHCARE"
+  ],
+  "purpose": [
+    "CITATION"
+  ],
+  "pageSetType": "ENTITY"
+}

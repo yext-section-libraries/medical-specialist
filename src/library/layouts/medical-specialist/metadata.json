@@ -1,0 +1,11 @@
+{
+  "id": "medical-specialist",
+  "displayName": "Medical Specialist",
+  "vertical": [
+    "HEALTHCARE"
+  ],
+  "purpose": [
+    "LOCATION"
+  ],
+  "pageSetType": "ENTITY"
+}

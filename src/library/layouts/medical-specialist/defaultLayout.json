@@ -1,0 +1,2413 @@
+{
+  "root": {
+    "props": {
+      "title": {
+        "field": "name",
+        "constantValue": "Yext Medical Specialist Pages",
+        "constantValueEnabled": false
+      },
+      "version": 78,
+      "description": {
+        "field": "description",
+        "constantValue": "",
+        "constantValueEnabled": false
+      }
+    }
+  },
+  "zones": {},
+  "content": [
+    {
+      "type": "MedicalSpecialistHeader",
+      "props": {
+        "id": "MedicalSpecialistHeader-df7872fd-521f-4fa5-833a-d8bb8332bb40",
+        "cta": {
+          "show": true,
+          "items": [
+            {
+              "cta": {
+                "data": {
+                  "cta": {
+                    "field": "",
+                    "selectedType": "textAndLink",
+                    "constantValue": {
+                      "link": {
+                        "defaultValue": "#"
+                      },
+                      "label": {
+                        "defaultValue": "Book Appointment",
+                        "hasLocalizedValue": "true"
+                      },
+                      "ctaType": "textAndLink",
+                      "linkType": "URL"
+                    },
+                    "constantValueEnabled": true
+                  },
+                  "customId": "",
+                  "ariaLabel": {
+                    "defaultValue": "Book Appointment",
+                    "hasLocalizedValue": "true"
+                  },
+                  "actionType": "link",
+                  "buttonText": {
+                    "defaultValue": "Book Appointment",
+                    "hasLocalizedValue": "true"
+                  },
+                  "customClass": "",
+                  "openInNewTab": false,
+                  "dataAttributes": []
+                },
+                "styles": {
+                  "link": {
+                    "fontSize": "default",
+                    "fontStyle": "default",
+                    "fontFamily": "default",
+                    "fontWeight": "default",
+                    "includeCaret": "default",
+                    "letterSpacing": "default",
+                    "textTransform": "default"
+                  },
+                  "color": {
+                    "selectedColor": "palette-primary",
+                    "contrastingColor": "palette-primary-contrast"
+                  },
+                  "button": {
+                    "fontSize": "18px",
+                    "fontStyle": "default",
+                    "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                    "fontWeight": "400",
+                    "borderRadius": "6px",
+                    "letterSpacing": "-0.02em",
+                    "textTransform": "default"
+                  },
+                  "variant": "primary"
+                }
+              }
+            }
+          ]
+        },
+        "section": {
+          "backgroundColor": {
+            "selectedColor": "palette-quaternary",
+            "contrastingColor": "palette-quaternary-contrast"
+          },
+          "visibleOnLivePage": true
+        },
+        "variant": "logoLeftInlineNav",
+        "logoImage": {
+          "url": {
+            "field": "",
+            "constantValue": {
+              "defaultValue": ""
+            },
+            "constantValueEnabled": true
+          },
+          "show": true,
+          "image": {
+            "field": "",
+            "constantValue": {
+              "url": "https://a.mktgcdn.com/p/OLT2KExDEKhKlCmIobyRRHN6MFUS77fVs5gIt_FTnBI/450x450.jpg",
+              "width": 450,
+              "height": 450,
+              "alternateText": "Medical Specialist"
+            },
+            "constantValueEnabled": true
+          },
+          "styles": {
+            "borderRadius": "default"
+          },
+          "aspectRatio": 1,
+          "imageConstrain": "fixed"
+        },
+        "utilities": {
+          "show": true,
+          "items": [
+            {
+              "link": "#",
+              "label": "Item 1",
+              "linkType": "URL",
+              "iconImage": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "",
+                    "width": 0,
+                    "height": 0
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "default"
+                },
+                "aspectRatio": 1,
+                "imageConstrain": "fixed"
+              },
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": "Item 2",
+              "linkType": "URL",
+              "iconImage": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "",
+                    "width": 0,
+                    "height": 0
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "default"
+                },
+                "aspectRatio": 1,
+                "imageConstrain": "fixed"
+              },
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": "Item 3",
+              "linkType": "URL",
+              "iconImage": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "",
+                    "width": 0,
+                    "height": 0
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "default"
+                },
+                "aspectRatio": 1,
+                "imageConstrain": "fixed"
+              },
+              "openInNewTab": false,
+              "normalizeLink": false
+            }
+          ]
+        },
+        "navigation": {
+          "show": true,
+          "links": [
+            {
+              "link": "#",
+              "label": {
+                "defaultValue": "Specialties",
+                "hasLocalizedValue": "true"
+              },
+              "linkType": "URL",
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": {
+                "defaultValue": "Providers",
+                "hasLocalizedValue": "true"
+              },
+              "linkType": "URL",
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": {
+                "defaultValue": "Insurance",
+                "hasLocalizedValue": "true"
+              },
+              "linkType": "URL",
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": {
+                "defaultValue": "Patient Resources",
+                "hasLocalizedValue": "true"
+              },
+              "linkType": "URL",
+              "openInNewTab": false,
+              "normalizeLink": false
+            },
+            {
+              "link": "#",
+              "label": {
+                "defaultValue": "Contact",
+                "hasLocalizedValue": "true"
+              },
+              "linkType": "URL",
+              "openInNewTab": false,
+              "normalizeLink": false
+            }
+          ],
+          "styles": {
+            "fontSize": "default",
+            "fontStyle": "default",
+            "fontFamily": "default",
+            "fontWeight": "default",
+            "includeCaret": "default",
+            "letterSpacing": "default",
+            "textTransform": "default"
+          }
+        }
+      }
+    },
+    {
+      "type": "MainContent",
+      "props": {
+        "id": "MainContent-default",
+        "content": [
+          {
+            "type": "MedicalSpecialistBreadcrumbs",
+            "props": {
+              "id": "MedicalSpecialistBreadcrumbs-31c8ebdd-ae5a-4379-a47a-e7c7e041b302",
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "rootLabel": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Locations",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "default",
+                  "fontStyle": "default",
+                  "fontFamily": "default",
+                  "fontWeight": "default",
+                  "textTransform": "default"
+                }
+              },
+              "includeCurrentLocation": true
+            }
+          },
+          {
+            "type": "MedicalSpecialistHero",
+            "props": {
+              "id": "MedicalSpecialistHero-a6ff01ed-8962-4733-81f3-2b4b53578123",
+              "ctas": [
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Get Directions",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "18px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "400",
+                        "borderRadius": "6px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "primary"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Find Care",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "18px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "400",
+                        "borderRadius": "6px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "View Patient Resources",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "[#260e01]",
+                        "contrastingColor": "white"
+                      },
+                      "button": {
+                        "fontSize": "18px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "400",
+                        "borderRadius": "6px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                }
+              ],
+              "title": {
+                "text": {
+                  "field": "name",
+                  "constantValue": {
+                    "defaultValue": "",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": false
+                },
+                "styles": {
+                  "fontSize": "72px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "eyebrow": {
+                "text": {
+                  "field": "geomodifier",
+                  "constantValue": {
+                    "defaultValue": "Central Campus",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": false
+                },
+                "styles": {
+                  "fontSize": "18px",
+                  "fontStyle": "default",
+                  "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                  "fontWeight": "400",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "32px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "heroImage": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "https://a.mktgcdn.com/p/vQqhmnexQfZueJGyh5M_j5W4EcTkTyZlW93eIoqjjvQ/1900x1267.jpg",
+                    "width": 1900,
+                    "height": 1267,
+                    "alternateText": "Medical specialist hero image"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "9999px"
+                },
+                "aspectRatio": 0.75,
+                "imageConstrain": "filled"
+              },
+              "description": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat, sem ac blandit placerat, velit neque volutpat libero, et mattis urna erat ut nisi.</span></p>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat, sem ac blandit placerat, velit neque volutpat libero, et mattis urna erat ut nisi.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "18px",
+                  "fontStyle": "default",
+                  "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                  "fontWeight": "500",
+                  "textTransform": "default"
+                }
+              },
+              "imageBackgroundColor": {
+                "selectedColor": "palette-primary",
+                "contrastingColor": "palette-primary-contrast"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistCoreInfo",
+            "props": {
+              "id": "MedicalSpecialistCoreInfo-62b7650a-c1bf-4097-9c9c-c80fa938392d",
+              "hours": {
+                "field": "hours",
+                "constantValue": {},
+                "constantValueEnabled": false
+              },
+              "details": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<ul><li><span>Wheelchair accessible entrances</span></li><li><span>Mobility accessible routes</span></li><li><span>Elevators</span></li><li><span>Accessible restrooms</span></li><li><span>Patient drop-off</span></li></ul>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Wheelchair accessible entrances\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"listitem\",\"value\":1,\"version\":1},{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Mobility accessible routes\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"listitem\",\"value\":2,\"version\":1},{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Elevators\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"listitem\",\"value\":3,\"version\":1},{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Accessible restrooms\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"listitem\",\"value\":4,\"version\":1},{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Patient drop-off\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"listitem\",\"value\":5,\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"listType\":\"bullet\",\"start\":1,\"tag\":\"ul\",\"type\":\"list\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "default",
+                  "fontStyle": "default",
+                  "fontFamily": "default",
+                  "fontWeight": "default",
+                  "textTransform": "default"
+                }
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "56px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "accentColor": {
+                  "selectedColor": "palette-primary",
+                  "contrastingColor": "palette-primary-contrast"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "bodyStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "visitLinks": [
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Get Directions",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "link": {
+                        "fontSize": "default",
+                        "fontStyle": "default",
+                        "fontFamily": "default",
+                        "fontWeight": "default",
+                        "includeCaret": "none",
+                        "letterSpacing": "default",
+                        "textTransform": "default"
+                      },
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "variant": "link"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Make Appointment",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "link": {
+                        "fontSize": "default",
+                        "fontStyle": "default",
+                        "fontFamily": "default",
+                        "fontWeight": "default",
+                        "includeCaret": "none",
+                        "letterSpacing": "default",
+                        "textTransform": "default"
+                      },
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "variant": "link"
+                    }
+                  }
+                }
+              ],
+              "hoursStyles": {
+                "alignment": "items-start",
+                "textStyles": {
+                  "fontSize": "default",
+                  "fontStyle": "default",
+                  "fontFamily": "default",
+                  "fontWeight": "default",
+                  "textTransform": "default"
+                },
+                "startOfWeek": "today",
+                "collapseDays": false,
+                "showAdditionalHoursText": true
+              },
+              "visitPhones": {
+                "items": [
+                  {
+                    "label": "Main Phone:",
+                    "number": {
+                      "field": "mainPhone",
+                      "constantValue": "+1 (303) 555-0142",
+                      "constantValueEnabled": false
+                    }
+                  }
+                ],
+                "phoneFormat": "domestic",
+                "includeHyperlink": true
+              },
+              "visitAddress": {
+                "address": {
+                  "field": "address",
+                  "constantValue": {
+                    "city": "",
+                    "line1": "",
+                    "region": "",
+                    "postalCode": "",
+                    "countryCode": ""
+                  },
+                  "constantValueEnabled": false
+                },
+                "showRegion": true,
+                "showCountry": false
+              },
+              "hoursCardTitle": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Opening Hours",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                }
+              },
+              "visitCardTitle": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Visit Us",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                }
+              },
+              "cardTitleStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "detailsCardTitle": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Accessibility",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                }
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistServices",
+            "props": {
+              "id": "MedicalSpecialistServices-08ae0ea2-4cf0-4047-9e31-3a3fd86b494b",
+              "cards": {
+                "field": "",
+                "mappings": {
+                  "title": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "description": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  }
+                },
+                "constantValue": [
+                  {
+                    "cta": {
+                      "data": {
+                        "cta": {
+                          "field": "",
+                          "selectedType": "textAndLink",
+                          "constantValue": {
+                            "link": "#",
+                            "label": {
+                              "defaultValue": "View Lorem Guide",
+                              "hasLocalizedValue": "true"
+                            },
+                            "ctaType": "textAndLink",
+                            "linkType": "URL"
+                          },
+                          "constantValueEnabled": true
+                        },
+                        "actionType": "link",
+                        "openInNewTab": false
+                      },
+                      "styles": {
+                        "link": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "includeCaret": "none",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "color": {
+                          "selectedColor": "palette-primary",
+                          "contrastingColor": "palette-primary-contrast"
+                        },
+                        "button": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "borderRadius": "6px",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "variant": "link"
+                      }
+                    },
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Urgent Care & Express Care",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "description": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum purus at ex feugiat tristique.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum purus at ex feugiat tristique.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "cta": {
+                      "data": {
+                        "cta": {
+                          "field": "",
+                          "selectedType": "textAndLink",
+                          "constantValue": {
+                            "link": "#",
+                            "label": {
+                              "defaultValue": "Explore Ipsum Details",
+                              "hasLocalizedValue": "true"
+                            },
+                            "ctaType": "textAndLink",
+                            "linkType": "URL"
+                          },
+                          "constantValueEnabled": true
+                        },
+                        "actionType": "link",
+                        "openInNewTab": false
+                      },
+                      "styles": {
+                        "link": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "includeCaret": "none",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "color": {
+                          "selectedColor": "palette-primary",
+                          "contrastingColor": "palette-primary-contrast"
+                        },
+                        "button": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "borderRadius": "6px",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "variant": "link"
+                      }
+                    },
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Primary Care Services",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "description": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi etiam dignissim diam.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi etiam dignissim diam.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "cta": {
+                      "data": {
+                        "cta": {
+                          "field": "",
+                          "selectedType": "textAndLink",
+                          "constantValue": {
+                            "link": "#",
+                            "label": {
+                              "defaultValue": "Read Dolor Notes",
+                              "hasLocalizedValue": "true"
+                            },
+                            "ctaType": "textAndLink",
+                            "linkType": "URL"
+                          },
+                          "constantValueEnabled": true
+                        },
+                        "actionType": "link",
+                        "openInNewTab": false
+                      },
+                      "styles": {
+                        "link": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "includeCaret": "none",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "color": {
+                          "selectedColor": "palette-primary",
+                          "contrastingColor": "palette-primary-contrast"
+                        },
+                        "button": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "borderRadius": "6px",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "variant": "link"
+                      }
+                    },
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Diagnostic Imaging",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "description": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "cta": {
+                      "data": {
+                        "cta": {
+                          "field": "",
+                          "selectedType": "textAndLink",
+                          "constantValue": {
+                            "link": "#",
+                            "label": {
+                              "defaultValue": "Open Amet Brief",
+                              "hasLocalizedValue": "true"
+                            },
+                            "ctaType": "textAndLink",
+                            "linkType": "URL"
+                          },
+                          "constantValueEnabled": true
+                        },
+                        "actionType": "link",
+                        "openInNewTab": false
+                      },
+                      "styles": {
+                        "link": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "includeCaret": "none",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "color": {
+                          "selectedColor": "palette-primary",
+                          "contrastingColor": "palette-primary-contrast"
+                        },
+                        "button": {
+                          "fontSize": "16px",
+                          "fontStyle": "default",
+                          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                          "fontWeight": "500",
+                          "borderRadius": "6px",
+                          "letterSpacing": "-0.02em",
+                          "textTransform": "default"
+                        },
+                        "variant": "link"
+                      }
+                    },
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Lab & Screening Support",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "description": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  }
+                ],
+                "constantValueEnabled": true
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Medical Services",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "60px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "bodyStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "cardTitleStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "cardBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistInsurance",
+            "props": {
+              "id": "MedicalSpecialistInsurance-9fd09a09-f160-470b-8011-7889bfaea49c",
+              "groups": {
+                "field": "",
+                "mappings": {
+                  "title": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "contents": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  }
+                },
+                "constantValue": [
+                  {
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Private / Commercial Insurance",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "contents": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum alpha<br/>Dolor sit beta<br/>Amet gamma coverage</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum alpha\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Dolor sit beta\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Amet gamma coverage\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Public Programs",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "contents": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem public one<br/>Dolor support two<br/>Amet access three</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem public one\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Dolor support two\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Amet access three\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "title": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Supplemental Options",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "contents": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem add-on<br/>Ipsum flexible option<br/>Dolor premium rider</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem add-on\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Ipsum flexible option\",\"type\":\"text\",\"version\":1},{\"type\":\"linebreak\",\"version\":1},{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Dolor premium rider\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  }
+                ],
+                "constantValueEnabled": true
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Insurance Accepted",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "60px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "bodyStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "description": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at commodo metus, ut posuere nibh.</span></p>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at commodo metus, ut posuere nibh.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "default",
+                  "fontStyle": "default",
+                  "fontFamily": "default",
+                  "fontWeight": "default",
+                  "textTransform": "default"
+                }
+              },
+              "summaryStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "accordionItemBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistAbout",
+            "props": {
+              "id": "MedicalSpecialistAbout-1e92295a-569a-4c37-af8c-8bb39bb76cf8",
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "About Us",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "32px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "bodyText": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Our facility is designed for efficiency and patient comfort. By housing advanced imaging, a high-complexity lab, and a diverse team of specialists under one roof, we ensure that diagnosis and treatment happen in hours, not days.</span></p><p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>We are committed to reducing ER wait times and providing the [[address.city]] community with a higher standard of local healthcare.</span></p>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Our facility is designed for efficiency and patient comfort. By housing advanced imaging, a high-complexity lab, and a diverse team of specialists under one roof, we ensure that diagnosis and treatment happen in hours, not days.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1},{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"We are committed to reducing ER wait times and providing the [[address.city]] community with a higher standard of local healthcare.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "18px",
+                  "fontStyle": "default",
+                  "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                  "fontWeight": "500",
+                  "textTransform": "default"
+                }
+              },
+              "imageUrl": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "https://a.mktgcdn.com/p/UHR6VTEvcR-yDMqPSOS7LyK87Qt56EOrmfNbhLQxI08/1267x1900.jpg",
+                    "width": 1267,
+                    "height": 1900,
+                    "alternateText": "Medical specialist about image"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "default"
+                },
+                "aspectRatio": 2,
+                "imageConstrain": "filled"
+              },
+              "resourceLinks": [
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Online Registration Forms",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "14px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "500",
+                        "borderRadius": "8px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Comprehensive Insurance List",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "14px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "500",
+                        "borderRadius": "8px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Financial Assistance Policy",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "14px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "500",
+                        "borderRadius": "8px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                },
+                {
+                  "cta": {
+                    "data": {
+                      "cta": {
+                        "field": "",
+                        "selectedType": "textAndLink",
+                        "constantValue": {
+                          "link": "#",
+                          "label": {
+                            "defaultValue": "Telehealth Sign-In",
+                            "hasLocalizedValue": "true"
+                          },
+                          "linkType": "URL"
+                        },
+                        "constantValueEnabled": true
+                      },
+                      "actionType": "link",
+                      "openInNewTab": false
+                    },
+                    "styles": {
+                      "color": {
+                        "selectedColor": "palette-primary",
+                        "contrastingColor": "palette-primary-contrast"
+                      },
+                      "button": {
+                        "fontSize": "14px",
+                        "fontStyle": "default",
+                        "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                        "fontWeight": "500",
+                        "borderRadius": "8px",
+                        "letterSpacing": "-0.02em",
+                        "textTransform": "default"
+                      },
+                      "variant": "secondary"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "MedicalSpecialistProviders",
+            "props": {
+              "id": "MedicalSpecialistProviders-306b30fd-3715-4029-a2eb-4052474edde2",
+              "cta": {
+                "data": {
+                  "cta": {
+                    "field": "",
+                    "selectedType": "textAndLink",
+                    "constantValue": {
+                      "link": "#",
+                      "label": {
+                        "defaultValue": "Provider Directory",
+                        "hasLocalizedValue": "true"
+                      },
+                      "linkType": "URL"
+                    },
+                    "constantValueEnabled": true
+                  },
+                  "actionType": "link",
+                  "openInNewTab": false
+                },
+                "styles": {
+                  "color": {
+                    "selectedColor": "palette-primary",
+                    "contrastingColor": "palette-primary-contrast"
+                  },
+                  "button": {
+                    "fontSize": "18px",
+                    "fontStyle": "default",
+                    "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                    "fontWeight": "400",
+                    "borderRadius": "6px",
+                    "letterSpacing": "-0.02em",
+                    "textTransform": "default"
+                  },
+                  "variant": "primary"
+                }
+              },
+              "cards": {
+                "field": "",
+                "mappings": {
+                  "name": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "role": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "image": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "specialties": {
+                    "field": "",
+                    "constantValue": [],
+                    "constantValueEnabled": false
+                  },
+                  "certificationLabel": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "certificationValue": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  }
+                },
+                "constantValue": [
+                  {
+                    "name": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Dr. Elena Rodriguez, MD",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "role": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Chief of Medicine",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "image": {
+                      "field": "",
+                      "constantValue": {
+                        "url": "https://a.mktgcdn.com/p/UHR6VTEvcR-yDMqPSOS7LyK87Qt56EOrmfNbhLQxI08/1267x1900.jpg",
+                        "width": 1267,
+                        "height": 1900,
+                        "alternateText": "Provider profile photo"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "specialties": {
+                      "field": "",
+                      "constantValue": [
+                        "Emergency medicine",
+                        "Acute care stabilization",
+                        "Chronic disease management"
+                      ],
+                      "constantValueEnabled": true
+                    },
+                    "certificationLabel": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Board Certification",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "certificationValue": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "American Board of Family Medicine",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "name": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Dr. Thomas Hayes, DO",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "role": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Urgent Care Director",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "image": {
+                      "field": "",
+                      "constantValue": {
+                        "url": "https://a.mktgcdn.com/p/fbSbItkZpsHpkc8qHH7GxvQkWzxsfm6mGc0k4Lmfl-A/1267x1900.jpg",
+                        "width": 1267,
+                        "height": 1900,
+                        "alternateText": "Provider profile photo"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "specialties": {
+                      "field": "",
+                      "constantValue": [
+                        "Minor trauma",
+                        "Orthopedic injuries",
+                        "Pediatric urgent care"
+                      ],
+                      "constantValueEnabled": true
+                    },
+                    "certificationLabel": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Board Certification",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "certificationValue": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "American Osteopathic Board of Emergency Medicine",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "name": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Laura Croft, FNP-BC",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "role": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Family Nurse Practitioner",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "image": {
+                      "field": "",
+                      "constantValue": {
+                        "url": "https://a.mktgcdn.com/p/Qdlacb36DqN5Lt3q6V9jw-qSMmbPyl_AeMEI_CyDkHc/1267x1900.jpg",
+                        "width": 1267,
+                        "height": 1900,
+                        "alternateText": "Provider profile photo"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "specialties": {
+                      "field": "",
+                      "constantValue": [
+                        "Women's health",
+                        "Preventative screenings",
+                        "Wellness coaching"
+                      ],
+                      "constantValueEnabled": true
+                    },
+                    "certificationLabel": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "certificationValue": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "name": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Stephen Menendez, PA-C",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "role": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Physician Assistant",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "image": {
+                      "field": "",
+                      "constantValue": {
+                        "url": "https://a.mktgcdn.com/p/UHR6VTEvcR-yDMqPSOS7LyK87Qt56EOrmfNbhLQxI08/1267x1900.jpg",
+                        "width": 1267,
+                        "height": 1900,
+                        "alternateText": "Provider profile photo"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "specialties": {
+                      "field": "",
+                      "constantValue": [
+                        "Sports medicine",
+                        "Wound care",
+                        "Occupational health"
+                      ],
+                      "constantValueEnabled": true
+                    },
+                    "certificationLabel": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "certificationValue": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  }
+                ],
+                "constantValueEnabled": true
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Meet Our Providers",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "60px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "cardImage": {
+                "styles": {
+                  "borderRadius": "default"
+                },
+                "aspectRatio": 0,
+                "imageConstrain": "filled"
+              },
+              "bodyStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "nameStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "roleStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "description": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Board-certified clinicians serving Central Campus.</span></p>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Board-certified clinicians serving Central Campus.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "18px",
+                  "fontStyle": "default",
+                  "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                  "fontWeight": "500",
+                  "textTransform": "default"
+                }
+              },
+              "cardBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistReviews",
+            "props": {
+              "id": "MedicalSpecialistReviews-614f7e6d-92ad-4342-84bc-d111641ff30c",
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Patient Reviews",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "60px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "starColor": {
+                "selectedColor": "palette-primary",
+                "contrastingColor": "palette-primary-contrast"
+              },
+              "quoteStyles": {
+                "fontSize": "21px",
+                "fontStyle": "default",
+                "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                "fontWeight": "500",
+                "textTransform": "default"
+              },
+              "authorStyles": {
+                "fontSize": "18px",
+                "fontStyle": "default",
+                "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                "fontWeight": "600",
+                "textTransform": "default"
+              },
+              "summaryStyles": {
+                "fontSize": "18px",
+                "fontStyle": "default",
+                "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                "fontWeight": "500",
+                "textTransform": "default"
+              },
+              "reviewCardBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistFaq",
+            "props": {
+              "id": "MedicalSpecialistFaq-bc31be89-63c6-4b53-9433-e582ef0c8544",
+              "items": {
+                "field": "",
+                "mappings": {
+                  "answer": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  },
+                  "question": {
+                    "field": "",
+                    "constantValueEnabled": false
+                  }
+                },
+                "constantValue": [
+                  {
+                    "answer": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar velit ac mi pulvinar, vitae interdum nunc suscipit.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar velit ac mi pulvinar, vitae interdum nunc suscipit.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "question": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "When should I go to urgent care versus the ER?",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "answer": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare lectus sit amet est placerat in egestas erat.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare lectus sit amet est placerat in egestas erat.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "question": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "Do I need an appointment before I visit?",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  },
+                  {
+                    "answer": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": {
+                          "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>",
+                          "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                        },
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    },
+                    "question": {
+                      "field": "",
+                      "constantValue": {
+                        "defaultValue": "How can I prepare for my visit?",
+                        "hasLocalizedValue": "true"
+                      },
+                      "constantValueEnabled": true
+                    }
+                  }
+                ],
+                "constantValueEnabled": true
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Frequently Asked Questions",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "60px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "answerStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "questionStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "textTransform": "default"
+              },
+              "faqItemBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistOutreach",
+            "props": {
+              "id": "MedicalSpecialistOutreach-979d7b47-9ad6-4d00-9d58-4e3376a59379",
+              "cta": {
+                "data": {
+                  "cta": {
+                    "field": "",
+                    "selectedType": "textAndLink",
+                    "constantValue": {
+                      "link": "#",
+                      "label": {
+                        "defaultValue": "View Community Calendar",
+                        "hasLocalizedValue": "true"
+                      },
+                      "linkType": "URL"
+                    },
+                    "constantValueEnabled": true
+                  },
+                  "actionType": "link",
+                  "openInNewTab": false
+                },
+                "styles": {
+                  "link": {
+                    "fontSize": "default",
+                    "fontStyle": "default",
+                    "fontFamily": "default",
+                    "fontWeight": "default",
+                    "includeCaret": "default",
+                    "letterSpacing": "default",
+                    "textTransform": "default"
+                  },
+                  "button": {
+                    "fontSize": "default",
+                    "fontStyle": "default",
+                    "fontFamily": "default",
+                    "fontWeight": "default",
+                    "borderRadius": "default",
+                    "letterSpacing": "default",
+                    "textTransform": "default"
+                  },
+                  "variant": "primary"
+                }
+              },
+              "image": {
+                "image": {
+                  "field": "",
+                  "constantValue": {
+                    "url": "https://a.mktgcdn.com/p/fbSbItkZpsHpkc8qHH7GxvQkWzxsfm6mGc0k4Lmfl-A/1267x1900.jpg",
+                    "width": 1267,
+                    "height": 1900,
+                    "alternateText": "Outreach image"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "borderRadius": "9999px"
+                },
+                "aspectRatio": 0.75,
+                "imageConstrain": "filled"
+              },
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Community Outreach",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "72px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "description": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": {
+                      "html": "<p dir=\"ltr\" style=\"font-size: 14.67px; font-weight: 400; line-height: 18.67px; margin: 0; padding: 3px 2px 3px 2px; position: relative;\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate augue id velit commodo, sit amet dapibus dui feugiat.</span></p>",
+                      "json": "{\"root\":{\"children\":[{\"children\":[{\"detail\":0,\"format\":0,\"mode\":\"normal\",\"style\":\"\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate augue id velit commodo, sit amet dapibus dui feugiat.\",\"type\":\"text\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"paragraph\",\"version\":1}],\"direction\":\"ltr\",\"format\":\"\",\"indent\":0,\"type\":\"root\",\"version\":1}}"
+                    },
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "18px",
+                  "fontStyle": "default",
+                  "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                  "fontWeight": "500",
+                  "textTransform": "default"
+                }
+              },
+              "imageBackgroundColor": {
+                "selectedColor": "palette-primary",
+                "contrastingColor": "palette-primary-contrast"
+              }
+            }
+          },
+          {
+            "type": "MedicalSpecialistNearby",
+            "props": {
+              "id": "MedicalSpecialistNearby-76f04115-9976-44d1-9887-f40fae498fc3",
+              "limit": 3,
+              "heading": {
+                "text": {
+                  "field": "",
+                  "constantValue": {
+                    "defaultValue": "Nearby Facilities",
+                    "hasLocalizedValue": "true"
+                  },
+                  "constantValueEnabled": true
+                },
+                "styles": {
+                  "fontSize": "57px",
+                  "fontStyle": "default",
+                  "fontFamily": "Manrope",
+                  "fontWeight": "700",
+                  "textTransform": "default"
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "1280px",
+                  "verticalPadding": "16px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "palette-quaternary",
+                  "contrastingColor": "palette-quaternary-contrast"
+                },
+                "visibleOnLivePage": true
+              },
+              "metaStyles": {
+                "fontSize": "16px",
+                "fontStyle": "default",
+                "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                "fontWeight": "500",
+                "textTransform": "default"
+              },
+              "radiusMiles": 10,
+              "distanceStyles": {
+                "fontSize": "16px",
+                "fontStyle": "default",
+                "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+                "fontWeight": "500",
+                "textTransform": "default"
+              },
+              "cardTitleStyles": {
+                "fontSize": "24px",
+                "fontStyle": "default",
+                "fontFamily": "Manrope",
+                "fontWeight": "400",
+                "textTransform": "default"
+              },
+              "primaryCtaLabel": {
+                "field": "",
+                "constantValue": {
+                  "defaultValue": "More Details",
+                  "hasLocalizedValue": "true"
+                },
+                "constantValueEnabled": true
+              },
+              "secondaryCtaLabel": {
+                "field": "",
+                "constantValue": {
+                  "defaultValue": "Get Directions",
+                  "hasLocalizedValue": "true"
+                },
+                "constantValueEnabled": true
+              },
+              "primaryButtonColor": {
+                "selectedColor": "palette-primary",
+                "contrastingColor": "palette-primary-contrast"
+              },
+              "cardBackgroundColor": {
+                "selectedColor": "white",
+                "contrastingColor": "black"
+              },
+              "primaryButtonStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "borderRadius": "default",
+                "letterSpacing": "default",
+                "textTransform": "default"
+              },
+              "primaryButtonVariant": "solid",
+              "secondaryButtonColor": {
+                "selectedColor": "palette-primary",
+                "contrastingColor": "palette-primary-contrast"
+              },
+              "secondaryButtonStyles": {
+                "fontSize": "default",
+                "fontStyle": "default",
+                "fontFamily": "default",
+                "fontWeight": "default",
+                "borderRadius": "default",
+                "letterSpacing": "default",
+                "textTransform": "default"
+              },
+              "secondaryButtonVariant": "outline"
+            }
+          },
+          {
+            "type": "MedicalSpecialistMap",
+            "props": {
+              "id": "MedicalSpecialistMap-73848577-5c22-4009-a6b7-0bfce9c95a74",
+              "map": {
+                "zoom": 15,
+                "mapStyle": "dark-v11",
+                "coordinate": {
+                  "field": "yextDisplayCoordinate",
+                  "constantValue": {
+                    "latitude": 0,
+                    "longitude": 0
+                  },
+                  "constantValueEnabled": false
+                }
+              },
+              "section": {
+                "styles": {
+                  "contentWidth": "default",
+                  "verticalPadding": "0px"
+                },
+                "backgroundColor": {
+                  "selectedColor": "white",
+                  "contrastingColor": "palette-quaternary"
+                },
+                "visibleOnLivePage": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "MedicalSpecialistFooter",
+      "props": {
+        "id": "MedicalSpecialistFooter-d4c3e640-b874-49e8-a8c5-a474985b882d",
+        "section": {
+          "styles": {
+            "contentWidth": "1280px",
+            "verticalPadding": "40px"
+          },
+          "backgroundColor": {
+            "selectedColor": "palette-primary",
+            "contrastingColor": "palette-primary-contrast"
+          },
+          "visibleOnLivePage": true
+        },
+        "brandText": {
+          "text": {
+            "field": "name",
+            "constantValue": {
+              "defaultValue": "",
+              "hasLocalizedValue": "true"
+            },
+            "constantValueEnabled": false
+          },
+          "styles": {
+            "fontSize": "16px",
+            "fontStyle": "default",
+            "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+            "fontWeight": "500",
+            "textTransform": "default"
+          }
+        },
+        "logoImage": {
+          "image": {
+            "field": "",
+            "constantValue": {
+              "url": "https://a.mktgcdn.com/p/OLT2KExDEKhKlCmIobyRRHN6MFUS77fVs5gIt_FTnBI/450x450.jpg",
+              "width": 450,
+              "height": 450,
+              "alternateText": "Logo"
+            },
+            "constantValueEnabled": true
+          },
+          "styles": {
+            "borderRadius": "default"
+          },
+          "aspectRatio": 0,
+          "imageConstrain": "fixed"
+        },
+        "linkStyles": {
+          "fontSize": "16px",
+          "fontStyle": "default",
+          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+          "fontWeight": "500",
+          "includeCaret": "none",
+          "letterSpacing": "-0.02em",
+          "textTransform": "default"
+        },
+        "footerLinks": [
+          {
+            "link": "#",
+            "label": "Specialties",
+            "openInNewTab": false
+          },
+          {
+            "link": "#",
+            "label": "Providers",
+            "openInNewTab": false
+          },
+          {
+            "link": "#",
+            "label": "Insurance",
+            "openInNewTab": false
+          },
+          {
+            "link": "#",
+            "label": "Patient Resources",
+            "openInNewTab": false
+          },
+          {
+            "link": "#",
+            "label": "Contact",
+            "openInNewTab": false
+          }
+        ],
+        "contactPhone": {
+          "items": [
+            {
+              "label": "",
+              "number": {
+                "field": "mainPhone",
+                "constantValue": "+1 (303) 555-0142",
+                "constantValueEnabled": false
+              }
+            }
+          ],
+          "phoneFormat": "domestic",
+          "includeHyperlink": true
+        },
+        "contactAddress": {
+          "address": {
+            "field": "address",
+            "constantValue": {
+              "city": "",
+              "line1": "",
+              "region": "",
+              "postalCode": "",
+              "countryCode": ""
+            },
+            "constantValueEnabled": false
+          },
+          "showRegion": true,
+          "showCountry": false
+        },
+        "contactWebsite": {
+          "data": {
+            "cta": {
+              "field": "",
+              "selectedType": "textAndLink",
+              "constantValue": {
+                "link": "#",
+                "label": {
+                  "defaultValue": "https://www.example.com",
+                  "hasLocalizedValue": "true"
+                },
+                "linkType": "URL"
+              },
+              "constantValueEnabled": true
+            },
+            "actionType": "link",
+            "openInNewTab": false
+          },
+          "styles": {
+            "link": {
+              "fontSize": "16px",
+              "fontStyle": "default",
+              "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+              "fontWeight": "500",
+              "includeCaret": "none",
+              "letterSpacing": "-0.02em",
+              "textTransform": "default"
+            },
+            "color": {
+              "selectedColor": "palette-primary",
+              "contrastingColor": "palette-primary-contrast"
+            },
+            "variant": "link"
+          }
+        },
+        "contactPhoneStyles": {
+          "fontSize": "16px",
+          "fontStyle": "default",
+          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+          "fontWeight": "500",
+          "textTransform": "default"
+        },
+        "contactAddressStyles": {
+          "fontSize": "16px",
+          "fontStyle": "default",
+          "fontFamily": "'Krub', 'Krub Fallback', sans-serif",
+          "fontWeight": "500",
+          "textTransform": "default"
+        }
+      }
+    }
+  ]
+}

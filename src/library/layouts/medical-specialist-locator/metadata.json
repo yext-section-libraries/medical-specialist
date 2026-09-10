@@ -1,5 +1,5 @@
 {
   "id": "medical-specialist-locator",
   "displayName": "Locator",
-  "pageGroupType": "LOCATOR"
+  "pageSetType": "LOCATOR"
 }

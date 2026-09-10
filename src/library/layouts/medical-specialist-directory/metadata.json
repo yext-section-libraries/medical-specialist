@@ -1,5 +1,5 @@
 {
   "id": "medical-specialist-directory",
   "displayName": "Directory",
-  "pageGroupType": "DIRECTORY"
+  "pageSetType": "DIRECTORY"
 }

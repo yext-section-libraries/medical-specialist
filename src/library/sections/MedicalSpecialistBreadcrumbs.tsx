@@ -3,8 +3,10 @@ import type { SectionConfig } from "@yext/visual-editor";
 import * as React from "react";
 import { AnalyticsScopeProvider, Link } from "@yext/pages-components";
 import {
+  Background,
   EntityField,
   getAnalyticsScopeHash,
+  getSurfaceColorStyle,
   getThemeColorCssValue,
   resolveBreadcrumbs,
   resolveComponentData,
@@ -85,10 +87,13 @@ const MedicalSpecialistBreadcrumbsComponent = (
         liveVisibility={props.section.visibleOnLivePage}
         isEditing={props.puck.isEditing}
       >
-        <section
+        <Background
+          as="section"
+          background={props.section.backgroundColor}
           style={{
-            backgroundColor: getThemeColorCssValue(
-              props.section.backgroundColor.selectedColor,
+            ...getSurfaceColorStyle(
+              props.section.backgroundColor,
+              streamDocument,
             ),
             padding: `${verticalPadding} 40px`,
           }}
@@ -202,7 +207,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
               })}
             </ol>
           </nav>
-        </section>
+        </Background>
       </VisibilityWrapper>
     </AnalyticsScopeProvider>
   );

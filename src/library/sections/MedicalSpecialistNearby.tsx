@@ -1,13 +1,21 @@
 import type { SectionConfig } from "@yext/visual-editor";
+import {
+  getReadableSectionForeground,
+  getTextStyle,
+  pxOrUndefined,
+  toThemeCss,
+} from "../shared/sectionHelpers";
 
 import * as React from "react";
 import { AnalyticsScopeProvider, Link } from "@yext/pages-components";
 import { parsePhoneNumber } from "awesome-phonenumber";
 import { convertDistance, getDistance } from "geolib";
 import {
+  Background,
   EntityField,
   VisibilityWrapper,
   getAnalyticsScopeHash,
+  getSurfaceColorStyle,
   mergeMeta,
   resolveComponentData,
   resolveUrlTemplate,
@@ -23,91 +31,6 @@ import {
   type YextComponentConfig,
   type YextEntityField,
 } from "@yext/visual-editor";
-
-const toThemeCss = (token?: string, fallback?: string) => {
-  if (!token) return fallback;
-  if (token.startsWith("[") && token.endsWith("]")) {
-    return token.slice(1, -1);
-  }
-  if (
-    token.startsWith("#") ||
-    token.startsWith("rgb(") ||
-    token.startsWith("rgba(") ||
-    token.startsWith("hsl(") ||
-    token.startsWith("hsla(") ||
-    token.startsWith("oklch(") ||
-    token.startsWith("oklab(")
-  ) {
-    return token;
-  }
-  switch (token) {
-    case "white":
-      return "#ffffff";
-    case "black":
-      return "#000000";
-    case "palette-primary":
-      return "var(--colors-palette-primary)";
-    case "palette-secondary":
-      return "var(--colors-palette-secondary)";
-    case "palette-tertiary":
-      return "var(--colors-palette-tertiary)";
-    case "palette-quaternary":
-      return "var(--colors-palette-quaternary)";
-    case "palette-primary-light":
-      return "hsl(from var(--colors-palette-primary) h s 98)";
-    case "palette-secondary-light":
-      return "hsl(from var(--colors-palette-secondary) h s 98)";
-    case "palette-tertiary-light":
-      return "hsl(from var(--colors-palette-tertiary) h s 98)";
-    case "palette-quaternary-light":
-      return "hsl(from var(--colors-palette-quaternary) h s 98)";
-    case "palette-primary-dark":
-      return "hsl(from var(--colors-palette-primary) h s 20)";
-    case "palette-secondary-dark":
-      return "hsl(from var(--colors-palette-secondary) h s 20)";
-    default:
-      return `var(--colors-${token}, ${fallback ?? "transparent"})`;
-  }
-};
-
-const getThemeToken = (color?: ThemeColor | string, fallbackToken?: string) => {
-  if (typeof color === "string") {
-    const token = color.trim();
-    return !token || token.toLowerCase() === "default" ? fallbackToken : token;
-  }
-
-  if (!color || typeof color !== "object") {
-    return fallbackToken;
-  }
-
-  const token =
-    typeof color.selectedColor === "string" ? color.selectedColor.trim() : "";
-  return !token || token.toLowerCase() === "default" ? fallbackToken : token;
-};
-
-const getReadableSectionForeground = (backgroundColor?: ThemeColor) => {
-  const token =
-    typeof backgroundColor?.contrastingColor === "string"
-      ? backgroundColor.contrastingColor
-      : undefined;
-
-  return getThemeToken(token, "palette-quaternary");
-};
-
-const getTextColorCss = (
-  color?: ThemeColor | string,
-  fallbackToken?: string,
-  fallbackCss?: string,
-) => {
-  const token = getThemeToken(color, fallbackToken);
-  const resolvedFallback = fallbackToken
-    ? toThemeCss(fallbackToken, fallbackCss)
-    : fallbackCss;
-  return toThemeCss(token, resolvedFallback);
-};
-
-const pxOrUndefined = (value?: string) =>
-  !value || value === "default" ? undefined : value;
 
 type NearbyDoc = {
   id?: string;
@@ -157,22 +80,6 @@ type MedicalSpecialistNearbyProps = {
   primaryCtaLabel: YextEntityField<TranslatableString>;
   secondaryCtaLabel: YextEntityField<TranslatableString>;
 };
-
-const getTextStyle = (
-  value: StyledTextValue,
-  color: ThemeColor | string | undefined,
-  fallbackFamily: string,
-  fallbackColorToken?: string,
-): React.CSSProperties => ({
-  fontFamily:
-    value.fontFamily === "default" ? fallbackFamily : value.fontFamily,
-  fontSize: pxOrUndefined(value.fontSize),
-  fontWeight: pxOrUndefined(value.fontWeight),
-  fontStyle: value.fontStyle === "default" ? undefined : value.fontStyle,
-  textTransform:
-    value.textTransform === "default" ? undefined : value.textTransform,
-  color: getTextColorCss(color, fallbackColorToken),
-});
 
 const getButtonStyle = (
   value: StyledButtonValue,
@@ -681,11 +588,14 @@ const MedicalSpecialistNearbyComponent = (
         isEditing={props.puck.isEditing}
       >
         <style>{styles}</style>
-        <section
+        <Background
+          as="section"
+          background={props.section.backgroundColor}
           style={{
-            backgroundColor: toThemeCss(
-              props.section.backgroundColor?.selectedColor,
-              "#fdf7f4",
+            ...getSurfaceColorStyle(
+              props.section.backgroundColor,
+              streamDocument,
+              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             padding: `${verticalPadding} 40px 24px`,
           }}
@@ -772,9 +682,13 @@ const MedicalSpecialistNearbyComponent = (
                       key={location.id ?? location.uid ?? title}
                       className="medical-specialist-nearby__card"
                       style={{
-                        backgroundColor: toThemeCss(
-                          props.cardBackgroundColor?.selectedColor,
-                          "rgba(255, 255, 255, 0.5)",
+                        ...getSurfaceColorStyle(
+                          props.cardBackgroundColor,
+                          streamDocument,
+                          {
+                            fallbackBackgroundColor:
+                              "rgba(255, 255, 255, 0.5)",
+                          },
                         ),
                       }}
                     >
@@ -865,7 +779,7 @@ const MedicalSpecialistNearbyComponent = (
               </div>
             )}
           </div>
-        </section>
+        </Background>
       </VisibilityWrapper>
     </AnalyticsScopeProvider>
   );

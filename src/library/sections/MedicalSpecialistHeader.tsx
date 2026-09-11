@@ -1,4 +1,7 @@
 import type { SectionConfig } from "@yext/visual-editor";
+import {
+  aspectRatioOptions,
+} from "../shared/sectionHelpers";
 
 import * as React from "react";
 import { PuckComponent } from "@puckeditor/core";
@@ -34,7 +37,6 @@ import {
   normalizeLink,
   normalizeThemeColorToken,
   resolveComponentData,
-  ThemeOptions,
   useDocument,
 } from "@yext/visual-editor";
 
@@ -505,7 +507,7 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
                 aspectRatio: {
                   label: "Aspect Ratio",
                   type: "basicSelector",
-                  options: ThemeOptions.ASPECT_RATIO,
+                  options: aspectRatioOptions,
                 },
                 imageConstrain: {
                   label: "Image Constrain",
@@ -655,7 +657,7 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
         aspectRatio: {
           label: "Aspect Ratio",
           type: "basicSelector",
-          options: ThemeOptions.ASPECT_RATIO,
+          options: aspectRatioOptions,
         },
         imageConstrain: {
           label: "Image Constrain",

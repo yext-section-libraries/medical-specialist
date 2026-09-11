@@ -1,65 +1,20 @@
 import type { SectionConfig } from "@yext/visual-editor";
+import { pxOrUndefined } from "../shared/sectionHelpers";
 
 import { AnalyticsScopeProvider } from "@yext/pages-components";
 import {
+  Background,
   EntityField,
   MapboxStaticMapComponent,
   VisibilityWrapper,
   getAnalyticsScopeHash,
+  getSurfaceColorStyle,
   mapboxStaticMapStyleOptions,
+  useDocument,
   type StyledPageSectionValue,
   type ThemeColor,
   type YextComponentConfig,
 } from "@yext/visual-editor";
-
-const toThemeCss = (token?: string, fallback?: string) => {
-  if (!token) return fallback;
-  if (token.startsWith("[") && token.endsWith("]")) {
-    return token.slice(1, -1);
-  }
-  if (
-    token.startsWith("#") ||
-    token.startsWith("rgb(") ||
-    token.startsWith("rgba(") ||
-    token.startsWith("hsl(") ||
-    token.startsWith("hsla(") ||
-    token.startsWith("oklch(") ||
-    token.startsWith("oklab(")
-  ) {
-    return token;
-  }
-  switch (token) {
-    case "white":
-      return "#ffffff";
-    case "black":
-      return "#000000";
-    case "palette-primary":
-      return "var(--colors-palette-primary)";
-    case "palette-secondary":
-      return "var(--colors-palette-secondary)";
-    case "palette-tertiary":
-      return "var(--colors-palette-tertiary)";
-    case "palette-quaternary":
-      return "var(--colors-palette-quaternary)";
-    case "palette-primary-light":
-      return "hsl(from var(--colors-palette-primary) h s 98)";
-    case "palette-secondary-light":
-      return "hsl(from var(--colors-palette-secondary) h s 98)";
-    case "palette-tertiary-light":
-      return "hsl(from var(--colors-palette-tertiary) h s 98)";
-    case "palette-quaternary-light":
-      return "hsl(from var(--colors-palette-quaternary) h s 98)";
-    case "palette-primary-dark":
-      return "hsl(from var(--colors-palette-primary) h s 20)";
-    case "palette-secondary-dark":
-      return "hsl(from var(--colors-palette-secondary) h s 20)";
-    default:
-      return `var(--colors-${token}, ${fallback ?? "transparent"})`;
-  }
-};
-
-const pxOrUndefined = (value?: string) =>
-  !value || value === "default" ? undefined : value;
 
 type MedicalSpecialistMapProps = {
   section: {
@@ -208,6 +163,7 @@ a {
 const MedicalSpecialistMapComponent = (
   props: MedicalSpecialistMapProps & { id: string; puck: any },
 ) => {
+  const streamDocument = useDocument();
   const verticalPadding =
     pxOrUndefined(props.section.styles.verticalPadding) ?? "0px";
 
@@ -223,12 +179,15 @@ const MedicalSpecialistMapComponent = (
         isEditing={props.puck.isEditing}
       >
         <style>{mapStyles}</style>
-        <section
+        <Background
+          as="section"
+          background={props.section.backgroundColor}
           className="medical-specialist-map"
           style={{
-            backgroundColor: toThemeCss(
-              props.section.backgroundColor?.selectedColor,
-              "#fdf7f4",
+            ...getSurfaceColorStyle(
+              props.section.backgroundColor,
+              streamDocument,
+              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             paddingTop: verticalPadding,
             paddingBottom: verticalPadding,
@@ -251,7 +210,7 @@ const MedicalSpecialistMapComponent = (
               />
             </EntityField>
           </div>
-        </section>
+        </Background>
       </VisibilityWrapper>
     </AnalyticsScopeProvider>
   );

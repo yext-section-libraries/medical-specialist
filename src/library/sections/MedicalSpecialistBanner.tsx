@@ -18,6 +18,7 @@ import {
   type YextFields,
   backgroundColors,
   getDefaultRTF,
+  getSurfaceColorStyle,
   resolveComponentData,
   resolveYextEntityField,
   toPuckFields,
@@ -139,6 +140,7 @@ const MedicalSpecialistBannerComponent: PuckComponent<MedicalSpecialistBannerPro
     return (
       <PageSection
         background={section.backgroundColor}
+        outerStyle={getSurfaceColorStyle(section.backgroundColor, streamDocument)}
         className="flex items-center justify-center"
         verticalPadding="sm"
       >
@@ -165,7 +167,6 @@ const MedicalSpecialistBannerComponent: PuckComponent<MedicalSpecialistBannerPro
     data.text,
     i18n.language,
     streamDocument,
-    { richTextStyleOverrides },
   );
 
   if (!resolvedText) {
@@ -175,6 +176,7 @@ const MedicalSpecialistBannerComponent: PuckComponent<MedicalSpecialistBannerPro
   return (
     <PageSection
       background={section.backgroundColor}
+      outerStyle={getSurfaceColorStyle(section.backgroundColor, streamDocument)}
       className={`flex items-center ${
         {
           left: "justify-start text-left",
@@ -207,7 +209,9 @@ const MedicalSpecialistBannerComponent: PuckComponent<MedicalSpecialistBannerPro
  */
 export const MedicalSpecialistBanner: YextComponentConfig<MedicalSpecialistBannerProps> = {
   label: "Banner",
-  fields: toPuckFields(MedicalSpecialistBannerFields),
+  fields: toPuckFields<MedicalSpecialistBannerProps>(
+    MedicalSpecialistBannerFields,
+  ),
   defaultProps: {
     data: {
       text: {

@@ -8,8 +8,10 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { AnalyticsScopeProvider } from "@yext/pages-components";
 import {
+  msg,
   Background,
   EntityField,
   getAggregateRating,
@@ -24,6 +26,7 @@ import {
   type YextComponentConfig,
   type YextEntityField,
   useDocument,
+  pt,
 } from "@yext/visual-editor";
 
 const createTextFieldValue = (
@@ -361,6 +364,7 @@ a {
 const MedicalSpecialistReviewsComponent = (
   props: MedicalSpecialistReviewsProps & { id: string; puck: any },
 ) => {
+  const { t } = useTranslation();
   const streamDocument = useDocument<ReviewsDocument>();
   const sectionWidth =
     pxOrUndefined(props.section.styles.contentWidth) ?? "1280px";
@@ -491,7 +495,10 @@ const MedicalSpecialistReviewsComponent = (
                 </h2>
               </EntityField>
               <p className="medical-specialist-reviews__empty">
-                No first-party reviews are available for this entity yet.
+                {pt(
+                  "noFirstPartyReviewsAvailable",
+                  "No first-party reviews are available for this entity yet.",
+                )}
               </p>
             </div>
           </Background>
@@ -575,7 +582,10 @@ const MedicalSpecialistReviewsComponent = (
                   typeof review.authorName === "string" &&
                   review.authorName.trim()
                     ? review.authorName.trim()
-                    : `Review ${index + 1}`;
+                    : t("reviewWithNumber", {
+                        number: index + 1,
+                        defaultValue: "Review {{number}}",
+                      });
                 const rating =
                   typeof review.rating === "number" &&
                   Number.isFinite(review.rating)
@@ -598,8 +608,7 @@ const MedicalSpecialistReviewsComponent = (
                         props.reviewCardBackgroundColor,
                         streamDocument,
                         {
-                          fallbackBackgroundColor:
-                            "rgba(255, 255, 255, 0.5)",
+                          fallbackBackgroundColor: "rgba(255, 255, 255, 0.5)",
                         },
                       ),
                       color: reviewCardForegroundCss,
@@ -613,7 +622,10 @@ const MedicalSpecialistReviewsComponent = (
                           "#7d9e77",
                         ),
                       }}
-                      aria-label={`${rating} out of 5 stars`}
+                      aria-label={t("ratingOutOfFiveStarsAria", {
+                        rating,
+                        defaultValue: "{{rating}} out of 5 stars",
+                      })}
                     >
                       {renderStars(rating)}
                     </div>
@@ -626,7 +638,10 @@ const MedicalSpecialistReviewsComponent = (
                         ),
                       }}
                     >
-                      {`${rating}/5 stars`}
+                      {t("ratingOutOfFiveStarsShort", {
+                        rating,
+                        defaultValue: "{{rating}}/5 stars",
+                      })}
                     </p>
                     {quote ? (
                       <p
@@ -663,8 +678,11 @@ const MedicalSpecialistReviewsComponent = (
                     {responseContent ? (
                       <p className="medical-specialist-reviews__response">
                         {responseDate
-                          ? `Response (${responseDate}): `
-                          : "Response: "}
+                          ? t("responseWithDate", {
+                              date: responseDate,
+                              defaultValue: "Response ({{date}}):",
+                            })
+                          : t("response", "Response:")}{" "}
                         {responseContent}
                       </p>
                     ) : null}
@@ -681,78 +699,96 @@ const MedicalSpecialistReviewsComponent = (
 
 export const MedicalSpecialistReviews: YextComponentConfig<MedicalSpecialistReviewsProps> =
   {
-    label: "Reviews",
+    label: msg("components.reviews", "Reviews"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: {
+            label: msg("fields.sectionStyles", "Section Styles"),
+            type: "styledPageSection",
+          },
         },
       },
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: {
+            label: msg("fields.textStyles", "Text Styles"),
+            type: "styledText",
+          },
         },
       },
       reviewCardBackgroundColor: {
-        label: "Review Card Background Color",
+        label: msg(
+          "fields.reviewCardBackgroundColor",
+          "Review Card Background Color",
+        ),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },
       starColor: {
-        label: "Star Color",
+        label: msg("fields.starColor", "Star Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      summaryStyles: { label: "Summary Text Styles", type: "styledText" },
+      summaryStyles: {
+        label: msg("fields.summaryTextStyles", "Summary Text Styles"),
+        type: "styledText",
+      },
       summaryColor: {
-        label: "Summary Text Color",
+        label: msg("fields.summaryTextColor", "Summary Text Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       ratingDescriptionColor: {
-        label: "Rating Description Color",
+        label: msg("fields.ratingDescriptionColor", "Rating Description Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      quoteStyles: { label: "Quote Styles", type: "styledText" },
+      quoteStyles: {
+        label: msg("fields.quoteStyles", "Quote Styles"),
+        type: "styledText",
+      },
       quoteColor: {
-        label: "Quote Color",
+        label: msg("fields.quoteColor", "Quote Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      authorStyles: { label: "Author Styles", type: "styledText" },
+      authorStyles: {
+        label: msg("fields.authorStyles", "Author Styles"),
+        type: "styledText",
+      },
       authorColor: {
-        label: "Author Color",
+        label: msg("fields.authorColor", "Author Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },

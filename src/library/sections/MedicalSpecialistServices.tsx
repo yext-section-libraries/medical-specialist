@@ -10,6 +10,7 @@ import * as React from "react";
 import { AnalyticsScopeProvider } from "@yext/pages-components";
 
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   createItemSource,
@@ -85,19 +86,19 @@ const getDefaultServiceCardCta = (label: string): ComprehensiveCTAValue => ({
 });
 
 const serviceCardsSource = createItemSource<ServiceCardFields>({
-  label: "Service Cards",
+  label: msg("fields.serviceCards", "Service Cards"),
   mappingFields: {
     title: {
       type: "entityField",
-      label: "Title",
+      label: msg("fields.title", "Title"),
       filter: { types: ["type.string"], includeListsOnly: false },
     },
     description: {
       type: "entityField",
-      label: "Description",
+      label: msg("fields.description", "Description"),
       filter: { types: ["type.rich_text_v2"], includeListsOnly: false },
     },
-    cta: { type: "comprehensiveCTA", label: "Call to Action" },
+    cta: { type: "comprehensiveCTA", label: msg("fields.callToAction", "Call to Action") },
   },
   defaultValues: [
     {
@@ -633,63 +634,63 @@ const MedicalSpecialistServicesComponent = (
 
 export const MedicalSpecialistServices: YextComponentConfig<MedicalSpecialistServicesProps> =
   {
-    label: "Services",
+    label: msg("components.medicalSpecialistServices", "Services"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: { label: msg("fields.sectionStyles", "Section Styles"), type: "styledPageSection" },
         },
       },
       cards: serviceCardsSource.field,
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
-      cardTitleStyles: { label: "Card Title Styles", type: "styledText" },
+      cardTitleStyles: { label: msg("fields.cardTitleStyles", "Card Title Styles"), type: "styledText" },
       cardTitleColor: {
-        label: "Card Title Color",
+        label: msg("fields.cardTitleColor", "Card Title Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      bodyStyles: { label: "Body Styles", type: "styledText" },
+      bodyStyles: { label: msg("fields.bodyStyles", "Body Styles"), type: "styledText" },
       bodyColor: {
-        label: "Body Color",
+        label: msg("fields.bodyColor", "Body Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       cardBackgroundColor: {
-        label: "Card Background Color",
+        label: msg("fields.cardBackgroundColor", "Card Background Color"),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },

@@ -3,6 +3,7 @@ import { pxOrUndefined } from "../shared/sectionHelpers";
 
 import { AnalyticsScopeProvider } from "@yext/pages-components";
 import {
+  msg,
   Background,
   EntityField,
   MapboxStaticMapComponent,
@@ -218,47 +219,47 @@ const MedicalSpecialistMapComponent = (
 
 export const MedicalSpecialistMap: YextComponentConfig<MedicalSpecialistMapProps> =
   {
-    label: "Map",
+    label: msg("components.medicalSpecialistMap", "Map"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           styles: {
-            label: "Section Styles",
+            label: msg("fields.sectionStyles", "Section Styles"),
             type: "styledPageSection",
           },
         },
       },
       map: {
-        label: "Map",
+        label: msg("fields.map", "Map"),
         type: "object",
         objectFields: {
           coordinate: {
             type: "entityField",
-            label: "Coordinates",
+            label: msg("fields.coordinates", "Coordinates"),
             filter: { types: ["type.coordinate"] },
           },
           mapStyle: {
-            label: "Mapbox Map Style",
+            label: msg("fields.mapboxMapStyle", "Mapbox Map Style"),
             type: "select",
             options: mapboxStaticMapStyleOptions,
           },
           zoom: {
-            label: "Zoom",
+            label: msg("fields.zoom", "Zoom"),
             type: "number",
             min: 0,
             max: 22,

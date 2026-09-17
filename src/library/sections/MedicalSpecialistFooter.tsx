@@ -10,10 +10,12 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { AnalyticsScopeProvider, Link, Address } from "@yext/pages-components";
 import { parsePhoneNumber } from "awesome-phonenumber";
 
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   EntityField,
@@ -411,6 +413,7 @@ const YelpIcon = () => (
 const MedicalSpecialistFooterComponent = (
   props: MedicalSpecialistFooterProps & { id: string; puck: any },
 ) => {
+  const { t } = useTranslation();
   const streamDocument = useDocument<Record<string, unknown>>();
   const streamData = streamDocument as Record<string, unknown>;
   const locale =
@@ -673,7 +676,7 @@ const MedicalSpecialistFooterComponent = (
                   </p>
                   <div
                     className="medical-specialist-footer__social"
-                    aria-label="Social links"
+                    aria-label={t("socialLinks", "Social links")}
                   >
                     <span
                       className="medical-specialist-footer__social-icon"
@@ -798,113 +801,113 @@ const MedicalSpecialistFooterComponent = (
 
 export const MedicalSpecialistFooter: YextComponentConfig<MedicalSpecialistFooterProps> =
   {
-    label: "Footer",
+    label: msg("components.footer", "Footer"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           styles: {
-            label: "Section Styles",
+            label: msg("fields.sectionStyles", "Section Styles"),
             type: "styledPageSection",
           },
         },
       },
       logoImage: {
-        label: "Logo Image",
+        label: msg("fields.logoImage", "Logo Image"),
         type: "object",
         objectFields: {
           image: {
             type: "entityField",
-            label: "Image",
+            label: msg("fields.image", "Image"),
             filter: {
               types: ["type.image"],
             },
           },
           aspectRatio: {
-            label: "Aspect Ratio",
+            label: msg("fields.aspectRatio", "Aspect Ratio"),
             type: "basicSelector",
             options: aspectRatioOptions,
           },
           imageConstrain: {
-            label: "Image Constrain",
+            label: msg("fields.imageConstrain", "Image Constrain"),
             type: "select",
             options: [
-              { label: "Fixed", value: "fixed" },
-              { label: "Filled", value: "filled" },
+              { label: msg("fields.options.fixed", "Fixed"), value: "fixed" },
+              { label: msg("fields.options.filled", "Filled"), value: "filled" },
             ],
           },
-          styles: { label: "Image Styles", type: "styledImage" },
+          styles: { label: msg("fields.imageStyles", "Image Styles"), type: "styledImage" },
         },
       },
       linkStyles: {
-        label: "Link Styles",
+        label: msg("fields.linkStyles", "Link Styles"),
         type: "styledLink",
       },
       linkColor: {
-        label: "Link Color",
+        label: msg("fields.linkColor", "Link Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       brandText: {
-        label: "Brand Text Styles",
+        label: msg("fields.brandTextStyles", "Brand Text Styles"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Brand Name",
+            label: msg("fields.brandName", "Brand Name"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
           styles: {
-            label: "Text Styles",
+            label: msg("fields.textStyles", "Text Styles"),
             type: "styledText",
           },
         },
       },
       footerLinks: {
-        label: "Footer Links",
+        label: msg("fields.footerLinks", "Footer Links"),
         type: "array",
         arrayFields: {
           label: {
-            label: "Label",
+            label: msg("fields.label", "Label"),
             type: "text",
           },
           link: {
-            label: "Link",
+            label: msg("fields.link", "Link"),
             type: "text",
           },
           openInNewTab: {
-            label: "Open in New Tab",
+            label: msg("fields.openInNewTab", "Open in New Tab"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
         },
         defaultItemProps: {
-          label: "Footer Link",
+          label: msg("fields.footerLink", "Footer Link"),
           link: "#",
           openInNewTab: false,
         },
@@ -912,60 +915,60 @@ export const MedicalSpecialistFooter: YextComponentConfig<MedicalSpecialistFoote
           getFooterLinkSummary(item, index),
       },
       contactAddress: {
-        label: "Contact Address",
+        label: msg("fields.contactAddress", "Contact Address"),
         type: "object",
         objectFields: {
           address: {
             type: "entityField",
-            label: "Address",
+            label: msg("fields.address", "Address"),
             filter: {
               types: ["type.address"],
             },
           },
           showRegion: {
-            label: "Show Region",
+            label: msg("fields.showRegion", "Show Region"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           showCountry: {
-            label: "Show Country",
+            label: msg("fields.showCountry", "Show Country"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
         },
       },
       contactAddressStyles: {
-        label: "Contact Address Styles",
+        label: msg("fields.contactAddressStyles", "Contact Address Styles"),
         type: "styledText",
       },
       contactAddressColor: {
-        label: "Contact Address Color",
+        label: msg("fields.contactAddressColor", "Contact Address Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       contactPhone: {
-        label: "Contact Phone",
+        label: msg("fields.contactPhone", "Contact Phone"),
         type: "object",
         objectFields: {
           items: {
-            label: "Items",
+            label: msg("fields.items", "Items"),
             type: "array",
             arrayFields: {
               number: {
                 type: "entityField",
-                label: "Number",
+                label: msg("fields.number", "Number"),
                 filter: {
                   types: ["type.phone"],
                 },
               },
               label: {
-                label: "Label",
+                label: msg("fields.label", "Label"),
                 type: "text",
               },
             },
@@ -979,34 +982,34 @@ export const MedicalSpecialistFooter: YextComponentConfig<MedicalSpecialistFoote
             },
           },
           phoneFormat: {
-            label: "Phone Format",
+            label: msg("fields.phoneFormat", "Phone Format"),
             type: "radio",
             options: [
-              { label: "Domestic", value: "domestic" },
-              { label: "International", value: "international" },
+              { label: msg("fields.options.domestic", "Domestic"), value: "domestic" },
+              { label: msg("fields.options.international", "International"), value: "international" },
             ],
           },
           includeHyperlink: {
-            label: "Include Hyperlink",
+            label: msg("fields.includeHyperlink", "Include Hyperlink"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
         },
       },
       contactPhoneStyles: {
-        label: "Contact Phone Styles",
+        label: msg("fields.contactPhoneStyles", "Contact Phone Styles"),
         type: "styledText",
       },
       contactPhoneColor: {
-        label: "Contact Phone Color",
+        label: msg("fields.contactPhoneColor", "Contact Phone Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       contactWebsite: {
-        label: "Contact Website",
+        label: msg("fields.contactWebsite", "Contact Website"),
         type: "comprehensiveCTA",
       },
     },

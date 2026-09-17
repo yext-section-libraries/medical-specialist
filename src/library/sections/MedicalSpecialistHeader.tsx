@@ -4,6 +4,7 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { PuckComponent } from "@puckeditor/core";
 import {
   AnalyticsScopeProvider,
@@ -14,6 +15,7 @@ import {
   useAnalytics,
 } from "@yext/pages-components";
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   EntityField,
@@ -33,7 +35,7 @@ import {
   getAnalyticsScopeHash,
   getSurfaceColorStyle,
   getThemeColorCssValue,
-  i18nComponentsInstance,
+  i18nPageInstance,
   normalizeLink,
   normalizeThemeColorToken,
   resolveComponentData,
@@ -101,9 +103,9 @@ type MedicalSpecialistHeaderProps = {
 };
 
 const linkTypeOptions: Array<{ label: string; value: LinkType }> = [
-  { label: "URL", value: "URL" },
-  { label: "Phone", value: "PHONE" },
-  { label: "Email", value: "EMAIL" },
+  { label: msg("fields.options.url", "URL"), value: "URL" },
+  { label: msg("fields.options.phone", "Phone"), value: "PHONE" },
+  { label: msg("fields.options.email", "Email"), value: "EMAIL" },
 ];
 
 const defaultPrimaryCtaColor: ThemeColor = {
@@ -298,7 +300,7 @@ const getTranslatableSummary = (
   }
 
   return (
-    resolveComponentData(value, i18nComponentsInstance.language, undefined) ||
+    resolveComponentData(value, i18nPageInstance.language, undefined) ||
     value.defaultValue ||
     fallback
   );
@@ -376,82 +378,82 @@ const SharedHeaderDefaultUtilityIcon = () => (
 const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
   {
     variant: {
-      label: "Variant",
+      label: msg("fields.variant", "Variant"),
       type: "select",
       options: [
-        { label: "Centered Logo Split Nav", value: "centerLogoSplitNav" },
-        { label: "Logo Left Inline Nav", value: "logoLeftInlineNav" },
-        { label: "Stacked Nav Below", value: "stackedNavBelow" },
-        { label: "Utility Top Row", value: "utilityTopRow" },
+        { label: msg("fields.options.centeredLogoSplitNav", "Centered Logo Split Nav"), value: "centerLogoSplitNav" },
+        { label: msg("fields.options.logoLeftInlineNav", "Logo Left Inline Nav"), value: "logoLeftInlineNav" },
+        { label: msg("fields.options.stackedNavBelow", "Stacked Nav Below"), value: "stackedNavBelow" },
+        { label: msg("fields.options.utilityTopRow", "Utility Top Row"), value: "utilityTopRow" },
       ],
     },
     section: {
-      label: "Section",
+      label: msg("fields.section", "Section"),
       type: "object",
       objectFields: {
         visibleOnLivePage: {
-          label: "Visible on Live Page",
+          label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
           type: "radio",
           options: [
-            { label: "Yes", value: true },
-            { label: "No", value: false },
+            { label: msg("fields.options.yes", "Yes"), value: true },
+            { label: msg("fields.options.no", "No"), value: false },
           ],
         },
         backgroundColor: {
-          label: "Background Color",
+          label: msg("fields.backgroundColor", "Background Color"),
           type: "basicSelector",
           options: "BACKGROUND_COLOR",
         },
         dividerColor: {
-          label: "Divider Color",
+          label: msg("fields.dividerColor", "Divider Color"),
           type: "basicSelector",
           options: "SITE_COLOR",
         },
       },
     },
     navigation: {
-      label: "Navigation",
+      label: msg("fields.navigation", "Navigation"),
       type: "object",
       objectFields: {
         show: {
-          label: "Show Navigation",
+          label: msg("fields.showNavigation", "Show Navigation"),
           type: "radio",
           options: [
-            { label: "Yes", value: true },
-            { label: "No", value: false },
+            { label: msg("fields.options.yes", "Yes"), value: true },
+            { label: msg("fields.options.no", "No"), value: false },
           ],
         },
         links: {
-          label: "Links",
+          label: msg("fields.links", "Links"),
           type: "array",
           arrayFields: {
             label: {
-              label: "Label",
+              label: msg("fields.label", "Label"),
               type: "translatableString",
             },
             link: {
-              label: "Link",
+              label: msg("fields.link", "Link"),
               type: "translatableString",
             },
             linkType: {
-              label: "Link Type",
+              label: msg("fields.linkType", "Link Type"),
               type: "select",
               options: linkTypeOptions,
             },
             normalizeLink: {
-              label: "Normalize Link",
+              label: msg("fields.normalizeLink", "Normalize Link"),
               type: "radio",
               options: [
-                { label: "Yes", value: true },
-                { label: "No", value: false },
+                { label: msg("fields.options.yes", "Yes"), value: true },
+                { label: msg("fields.options.no", "No"), value: false },
               ],
             },
             openInNewTab: {
-              label: "Open in New Tab",
+              label: msg("fields.openInNewTab", "Open in New Tab"),
               type: "radio",
               options: [
-                { label: "Yes", value: true },
-                { label: "No", value: false },
+                { label: msg("fields.options.yes", "Yes"), value: true },
+                { label: msg("fields.options.no", "No"), value: false },
               ],
             },
           },
@@ -466,90 +468,90 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
             getTranslatableSummary(item.label, `Link ${index ?? 0}`),
         },
         fontColor: {
-          label: "Font Color",
+          label: msg("fields.fontColor", "Font Color"),
           type: "basicSelector",
           options: "SITE_COLOR",
         },
         styles: {
-          label: "Link Styles",
+          label: msg("fields.linkStyles", "Link Styles"),
           type: "styledLink",
           showIncludeCaretField: false,
         },
       },
     },
     utilities: {
-      label: "Utility Icons",
+      label: msg("fields.utilityIcons", "Utility Icons"),
       type: "object",
       objectFields: {
         show: {
-          label: "Show Utility Links",
+          label: msg("fields.showUtilityLinks", "Show Utility Links"),
           type: "radio",
           options: [
-            { label: "Yes", value: true },
-            { label: "No", value: false },
+            { label: msg("fields.options.yes", "Yes"), value: true },
+            { label: msg("fields.options.no", "No"), value: false },
           ],
         },
         items: {
-          label: "Items",
+          label: msg("fields.items", "Items"),
           type: "array",
           arrayFields: {
             iconImage: {
-              label: "Icon Image",
+              label: msg("fields.iconImage", "Icon Image"),
               type: "object",
               objectFields: {
                 image: {
                   type: "entityField",
-                  label: "Image",
+                  label: msg("fields.image", "Image"),
                   filter: {
                     types: ["type.image"],
                   },
                 },
                 aspectRatio: {
-                  label: "Aspect Ratio",
+                  label: msg("fields.aspectRatio", "Aspect Ratio"),
                   type: "basicSelector",
                   options: aspectRatioOptions,
                 },
                 imageConstrain: {
-                  label: "Image Constrain",
+                  label: msg("fields.imageConstrain", "Image Constrain"),
                   type: "select",
                   options: [
-                    { label: "Fixed", value: "fixed" },
-                    { label: "Filled", value: "filled" },
+                    { label: msg("fields.options.fixed", "Fixed"), value: "fixed" },
+                    { label: msg("fields.options.filled", "Filled"), value: "filled" },
                   ],
                 },
                 styles: {
-                  label: "Image Styles",
+                  label: msg("fields.imageStyles", "Image Styles"),
                   type: "styledImage",
                 },
               },
             },
             label: {
-              label: "Label",
+              label: msg("fields.label", "Label"),
               type: "translatableString",
             },
             link: {
-              label: "Link",
+              label: msg("fields.link", "Link"),
               type: "translatableString",
             },
             linkType: {
-              label: "Link Type",
+              label: msg("fields.linkType", "Link Type"),
               type: "select",
               options: linkTypeOptions,
             },
             normalizeLink: {
-              label: "Normalize Link",
+              label: msg("fields.normalizeLink", "Normalize Link"),
               type: "radio",
               options: [
-                { label: "Yes", value: true },
-                { label: "No", value: false },
+                { label: msg("fields.options.yes", "Yes"), value: true },
+                { label: msg("fields.options.no", "No"), value: false },
               ],
             },
             openInNewTab: {
-              label: "Open in New Tab",
+              label: msg("fields.openInNewTab", "Open in New Tab"),
               type: "radio",
               options: [
-                { label: "Yes", value: true },
-                { label: "No", value: false },
+                { label: msg("fields.options.yes", "Yes"), value: true },
+                { label: msg("fields.options.no", "No"), value: false },
               ],
             },
           },
@@ -567,23 +569,23 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
       },
     },
     cta: {
-      label: "Call to Actions",
+      label: msg("fields.callToActions", "Call to Actions"),
       type: "object",
       objectFields: {
         show: {
-          label: "Show CTA",
+          label: msg("fields.showCta", "Show CTA"),
           type: "radio",
           options: [
-            { label: "Yes", value: true },
-            { label: "No", value: false },
+            { label: msg("fields.options.yes", "Yes"), value: true },
+            { label: msg("fields.options.no", "No"), value: false },
           ],
         },
         items: {
-          label: "Items",
+          label: msg("fields.items", "Items"),
           type: "array",
           arrayFields: {
             cta: {
-              label: "CTA",
+              label: msg("fields.cta", "CTA"),
               type: "comprehensiveCTA",
             },
           },
@@ -629,46 +631,46 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
       },
     },
     logoImage: {
-      label: "Logo Image",
+      label: msg("fields.logoImage", "Logo Image"),
       type: "object",
       objectFields: {
         show: {
-          label: "Show Logo",
+          label: msg("fields.showLogo", "Show Logo"),
           type: "radio",
           options: [
-            { label: "Yes", value: true },
-            { label: "No", value: false },
+            { label: msg("fields.options.yes", "Yes"), value: true },
+            { label: msg("fields.options.no", "No"), value: false },
           ],
         },
         image: {
           type: "entityField",
-          label: "Image",
+          label: msg("fields.image", "Image"),
           filter: {
             types: ["type.image"],
           },
         },
         url: {
-          label: "URL",
+          label: msg("fields.url", "URL"),
           type: "entityField",
           filter: {
             types: ["type.string"],
           },
         },
         aspectRatio: {
-          label: "Aspect Ratio",
+          label: msg("fields.aspectRatio", "Aspect Ratio"),
           type: "basicSelector",
           options: aspectRatioOptions,
         },
         imageConstrain: {
-          label: "Image Constrain",
+          label: msg("fields.imageConstrain", "Image Constrain"),
           type: "select",
           options: [
-            { label: "Fixed", value: "fixed" },
-            { label: "Filled", value: "filled" },
+            { label: msg("fields.options.fixed", "Fixed"), value: "fixed" },
+            { label: msg("fields.options.filled", "Filled"), value: "filled" },
           ],
         },
         styles: {
-          label: "Image Styles",
+          label: msg("fields.imageStyles", "Image Styles"),
           type: "styledImage",
         },
       },
@@ -678,6 +680,7 @@ const MedicalSpecialistHeaderFields: YextFields<MedicalSpecialistHeaderProps> =
 const MedicalSpecialistHeaderComponent: PuckComponent<
   MedicalSpecialistHeaderProps
 > = (props) => {
+  const { t } = useTranslation();
   const analytics = useAnalytics();
   const streamDocument = useDocument<StreamDocument>();
   const locale = streamDocument.locale ?? "en";
@@ -900,7 +903,7 @@ const MedicalSpecialistHeaderComponent: PuckComponent<
   );
 
   const renderNavigationLinks = (orientation: "row" | "column") => (
-    <nav aria-label="Primary navigation">
+    <nav aria-label={t("primaryNavigation", "Primary navigation")}>
       <ul
         className={
           orientation === "row"
@@ -968,7 +971,7 @@ const MedicalSpecialistHeaderComponent: PuckComponent<
           }}
           eventName="headerLogo"
           className="inline-flex transition-opacity hover:opacity-80"
-          aria-label="Logo"
+          aria-label={t("logo", "Logo")}
         >
           {logoContent}
         </Link>
@@ -1228,7 +1231,7 @@ const MedicalSpecialistHeaderComponent: PuckComponent<
 
 export const MedicalSpecialistHeader: YextComponentConfig<MedicalSpecialistHeaderProps> =
   {
-    label: "Header",
+    label: msg("components.header", "Header"),
     fields: MedicalSpecialistHeaderFields,
     defaultProps: {
       variant: "logoLeftInlineNav",

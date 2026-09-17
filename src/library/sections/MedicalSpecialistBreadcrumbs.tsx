@@ -1,8 +1,10 @@
 import type { SectionConfig } from "@yext/visual-editor";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { AnalyticsScopeProvider, Link } from "@yext/pages-components";
 import {
+  msg,
   Background,
   EntityField,
   getAnalyticsScopeHash,
@@ -19,6 +21,7 @@ import {
   type TranslatableString,
   type YextComponentConfig,
   type YextEntityField,
+  pt,
 } from "@yext/visual-editor";
 
 type StyledText = {
@@ -43,6 +46,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
     puck: { isEditing: boolean };
   },
 ): React.JSX.Element => {
+  const { t } = useTranslation();
   const streamDocument = useDocument();
   const { relativePrefixToRoot } = useTemplateProps<{
     relativePrefixToRoot?: string;
@@ -71,8 +75,10 @@ const MedicalSpecialistBreadcrumbsComponent = (
           padding: "18px 24px",
         }}
       >
-        No breadcrumbs available (section will be hidden on live page). Create a
-        directory to enable breadcrumbs.
+        {pt(
+          "noBreadcrumbsAvailable",
+          "No breadcrumbs available (section will be hidden on live page). Create a directory to enable breadcrumbs.",
+        )}
       </p>
     ) : (
       <></>
@@ -99,7 +105,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
           }}
         >
           <nav
-            aria-label="Breadcrumb"
+            aria-label={t("breadcrumb", "Breadcrumb")}
             className="mx-auto"
             style={{ maxWidth: sectionWidth }}
           >
@@ -215,51 +221,57 @@ const MedicalSpecialistBreadcrumbsComponent = (
 
 export const MedicalSpecialistBreadcrumbs: YextComponentConfig<MedicalSpecialistBreadcrumbsProps> =
   {
-    label: "Breadcrumbs",
+    label: msg("components.breadcrumbs", "Breadcrumbs"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Color",
+            label: msg("fields.backgroundColor", "Background Color"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: {
+            label: msg("fields.sectionStyles", "Section Styles"),
+            type: "styledPageSection",
+          },
         },
       },
       rootLabel: {
-        label: "Root Label",
+        label: msg("fields.rootLabel", "Root Label"),
         type: "object",
         objectFields: {
           text: {
-            label: "Text",
+            label: msg("fields.text", "Text"),
             type: "entityField",
             filter: { types: ["type.string"], includeListsOnly: false },
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: {
+            label: msg("fields.textStyles", "Text Styles"),
+            type: "styledText",
+          },
           fontColor: {
-            label: "Font Color",
+            label: msg("fields.fontColor", "Font Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
         },
       },
       includeCurrentLocation: {
-        label: "Include Current Location",
+        label: msg("fields.includeCurrentLocation", "Include Current Location"),
         type: "radio",
         options: [
-          { label: "Yes", value: true },
-          { label: "No", value: false },
+          { label: msg("fields.options.yes", "Yes"), value: true },
+          { label: msg("fields.options.no", "No"), value: false },
         ],
       },
     },

@@ -11,15 +11,18 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import {
   AnalyticsScopeProvider,
   Address,
+  type DayOfWeekNames,
   HoursTable,
   Link,
 } from "@yext/pages-components";
 import { parsePhoneNumber } from "awesome-phonenumber";
 
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   EntityField,
@@ -617,6 +620,7 @@ a {
 const MedicalSpecialistCoreInfoComponent = (
   props: MedicalSpecialistCoreInfoProps & { id: string; puck: any },
 ) => {
+  const { t, i18n } = useTranslation();
   const streamDocument = useDocument<Record<string, unknown>>();
   const streamData = streamDocument as Record<string, unknown>;
   const locale =
@@ -627,6 +631,24 @@ const MedicalSpecialistCoreInfoComponent = (
       : typeof streamData.locale === "string"
         ? streamData.locale
         : "en";
+  const dayOfWeekNames = React.useMemo<DayOfWeekNames>(() => {
+    const formatter = new Intl.DateTimeFormat(i18n.language, {
+      timeZone: "UTC",
+      weekday: "long",
+    });
+    const formatWeekday = (day: number) =>
+      formatter.format(new Date(Date.UTC(2024, 0, day)));
+
+    return {
+      sunday: formatWeekday(7),
+      monday: formatWeekday(8),
+      tuesday: formatWeekday(9),
+      wednesday: formatWeekday(10),
+      thursday: formatWeekday(11),
+      friday: formatWeekday(12),
+      saturday: formatWeekday(13),
+    };
+  }, [i18n.language]);
   const headingText = (() => {
     const resolvedValue = resolveComponentData(
       props.heading.text as any,
@@ -1306,8 +1328,15 @@ const MedicalSpecialistCoreInfoComponent = (
                           comingSoon={Boolean(
                             (streamDocument as any)?.comingSoon,
                           )}
+                          dayOfWeekNames={dayOfWeekNames}
                           startOfWeek={props.hoursStyles.startOfWeek as any}
                           collapseDays={props.hoursStyles.collapseDays}
+                          intervalTranslations={{
+                            isClosed: t("closed", "Closed"),
+                            open24Hours: t("open24Hours", "Open 24 Hours"),
+                            reopenDate: t("reopenDate", "Reopen Date"),
+                            timeFormatLocale: i18n.language,
+                          }}
                         />
                       </EntityField>
                       {props.hoursStyles.showAdditionalHoursText &&
@@ -1332,60 +1361,60 @@ const MedicalSpecialistCoreInfoComponent = (
 
 export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCoreInfoProps> =
   {
-    label: "Core Info",
+    label: msg("components.medicalSpecialistCoreInfo", "Core Info"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           accentColor: {
-            label: "Accent Color",
+            label: msg("fields.accentColor", "Accent Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: { label: msg("fields.sectionStyles", "Section Styles"), type: "styledPageSection" },
         },
       },
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       visitCardTitle: {
-        label: "Visit Card Title",
+        label: msg("fields.visitCardTitle", "Visit Card Title"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
@@ -1394,12 +1423,12 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
         },
       },
       hoursCardTitle: {
-        label: "Hours Card Title",
+        label: msg("fields.hoursCardTitle", "Hours Card Title"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
@@ -1408,12 +1437,12 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
         },
       },
       detailsCardTitle: {
-        label: "Details Card Title",
+        label: msg("fields.detailsCardTitle", "Details Card Title"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
@@ -1422,51 +1451,51 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
         },
       },
       visitAddress: {
-        label: "Visit Address",
+        label: msg("fields.visitAddress", "Visit Address"),
         type: "object",
         objectFields: {
           address: {
             type: "entityField",
-            label: "Address",
+            label: msg("fields.address", "Address"),
             filter: {
               types: ["type.address"],
             },
           },
           showRegion: {
-            label: "Show Region",
+            label: msg("fields.showRegion", "Show Region"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           showCountry: {
-            label: "Show Country",
+            label: msg("fields.showCountry", "Show Country"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
         },
       },
       visitPhones: {
-        label: "Visit Phones",
+        label: msg("fields.visitPhones", "Visit Phones"),
         type: "object",
         objectFields: {
           items: {
-            label: "Items",
+            label: msg("fields.items", "Items"),
             type: "array",
             arrayFields: {
               number: {
                 type: "entityField",
-                label: "Number",
+                label: msg("fields.number", "Number"),
                 filter: {
                   types: ["type.phone"],
                 },
               },
               label: {
-                label: "Label",
+                label: msg("fields.label", "Label"),
                 type: "text",
               },
             },
@@ -1480,36 +1509,36 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
             },
           },
           phoneFormat: {
-            label: "Phone Format",
+            label: msg("fields.phoneFormat", "Phone Format"),
             type: "radio",
             options: [
-              { label: "Domestic", value: "domestic" },
-              { label: "International", value: "international" },
+              { label: msg("fields.options.domestic", "Domestic"), value: "domestic" },
+              { label: msg("fields.options.international", "International"), value: "international" },
             ],
           },
           includeHyperlink: {
-            label: "Include Hyperlink",
+            label: msg("fields.includeHyperlink", "Include Hyperlink"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
         },
       },
-      cardTitleStyles: { label: "Card Title Styles", type: "styledText" },
+      cardTitleStyles: { label: msg("fields.cardTitleStyles", "Card Title Styles"), type: "styledText" },
       cardTitleColor: {
-        label: "Card Title Color",
+        label: msg("fields.cardTitleColor", "Card Title Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      bodyStyles: { label: "Visit Styles", type: "styledText" },
+      bodyStyles: { label: msg("fields.visitStyles", "Visit Styles"), type: "styledText" },
       visitLinks: {
-        label: "Visit Links",
+        label: msg("fields.visitLinks", "Visit Links"),
         type: "array",
         arrayFields: {
           cta: {
-            label: "Call to Action",
+            label: msg("fields.callToAction", "Call to Action"),
             type: "comprehensiveCTA",
           },
         },
@@ -1554,27 +1583,27 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
           getCoreLinkSummary(item, index),
       },
       details: {
-        label: "Details",
+        label: msg("fields.details", "Details"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.rich_text_v2"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       hours: {
-        label: "Hours",
+        label: msg("fields.hours", "Hours"),
         type: "entityField",
         filter: {
           types: ["type.hours"],
@@ -1582,49 +1611,49 @@ export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCor
         disableConstantValueToggle: true,
       },
       hoursStyles: {
-        label: "Hours Styles",
+        label: msg("fields.hoursStyles", "Hours Styles"),
         type: "object",
         objectFields: {
           startOfWeek: {
-            label: "Start Of Week",
+            label: msg("fields.startOfWeek", "Start Of Week"),
             type: "select",
             options: [
-              { label: "Monday", value: "monday" },
-              { label: "Tuesday", value: "tuesday" },
-              { label: "Wednesday", value: "wednesday" },
-              { label: "Thursday", value: "thursday" },
-              { label: "Friday", value: "friday" },
-              { label: "Saturday", value: "saturday" },
-              { label: "Sunday", value: "sunday" },
-              { label: "Today", value: "today" },
+              { label: msg("fields.options.monday", "Monday"), value: "monday" },
+              { label: msg("fields.options.tuesday", "Tuesday"), value: "tuesday" },
+              { label: msg("fields.options.wednesday", "Wednesday"), value: "wednesday" },
+              { label: msg("fields.options.thursday", "Thursday"), value: "thursday" },
+              { label: msg("fields.options.friday", "Friday"), value: "friday" },
+              { label: msg("fields.options.saturday", "Saturday"), value: "saturday" },
+              { label: msg("fields.options.sunday", "Sunday"), value: "sunday" },
+              { label: msg("fields.options.today", "Today"), value: "today" },
             ],
           },
           collapseDays: {
-            label: "Collapse Days",
+            label: msg("fields.collapseDays", "Collapse Days"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           showAdditionalHoursText: {
-            label: "Show Additional Hours Text",
+            label: msg("fields.showAdditionalHoursText", "Show Additional Hours Text"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           alignment: {
-            label: "Alignment",
+            label: msg("fields.alignment", "Alignment"),
             type: "select",
             options: [
-              { label: "Start", value: "items-start" },
-              { label: "Center", value: "items-center" },
-              { label: "End", value: "items-end" },
+              { label: msg("fields.options.start", "Start"), value: "items-start" },
+              { label: msg("fields.options.center", "Center"), value: "items-center" },
+              { label: msg("fields.options.end", "End"), value: "items-end" },
             ],
           },
-          textStyles: { label: "Text Styles", type: "styledText" },
+          textStyles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
     },

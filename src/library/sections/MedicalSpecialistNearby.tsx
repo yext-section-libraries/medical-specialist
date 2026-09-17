@@ -7,10 +7,12 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { AnalyticsScopeProvider, Link } from "@yext/pages-components";
 import { parsePhoneNumber } from "awesome-phonenumber";
 import { convertDistance, getDistance } from "geolib";
 import {
+  msg,
   Background,
   EntityField,
   VisibilityWrapper,
@@ -397,6 +399,7 @@ a {
 const MedicalSpecialistNearbyComponent = (
   props: MedicalSpecialistNearbyProps & { id: string; puck: any },
 ) => {
+  const { t } = useTranslation();
   const streamDocument = useDocument<Record<string, any>>();
   const { relativePrefixToRoot } = useTemplateProps<{
     relativePrefixToRoot?: string;
@@ -631,7 +634,7 @@ const MedicalSpecialistNearbyComponent = (
                   sectionForeground,
                 )}
               >
-                Loading nearby locations
+                {t("loadingNearbyLocations", "Loading nearby locations")}
               </p>
             ) : nearbyLocationsStatus !== "success" ||
               !nearbyLocationDocs.length ? (
@@ -643,7 +646,10 @@ const MedicalSpecialistNearbyComponent = (
                   sectionForeground,
                 )}
               >
-                No nearby locations found for this location
+                {t(
+                  "noNearbyLocationsFound",
+                  "No nearby locations found for this location",
+                )}
               </p>
             ) : (
               <div className="medical-specialist-nearby__grid">
@@ -686,8 +692,7 @@ const MedicalSpecialistNearbyComponent = (
                           props.cardBackgroundColor,
                           streamDocument,
                           {
-                            fallbackBackgroundColor:
-                              "rgba(255, 255, 255, 0.5)",
+                            fallbackBackgroundColor: "rgba(255, 255, 255, 0.5)",
                           },
                         ),
                       }}
@@ -787,110 +792,128 @@ const MedicalSpecialistNearbyComponent = (
 
 export const MedicalSpecialistNearby: YextComponentConfig<MedicalSpecialistNearbyProps> =
   {
-    label: "Nearby",
+    label: msg("components.medicalSpecialistNearby", "Nearby"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: {
+            label: msg("fields.sectionStyles", "Section Styles"),
+            type: "styledPageSection",
+          },
         },
       },
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: {
+            label: msg("fields.textStyles", "Text Styles"),
+            type: "styledText",
+          },
         },
       },
-      cardTitleStyles: { label: "Card Title Styles", type: "styledText" },
+      cardTitleStyles: {
+        label: msg("fields.cardTitleStyles", "Card Title Styles"),
+        type: "styledText",
+      },
       cardTitleColor: {
-        label: "Card Title Color",
+        label: msg("fields.cardTitleColor", "Card Title Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      distanceStyles: { label: "Distance Styles", type: "styledText" },
+      distanceStyles: {
+        label: msg("fields.distanceStyles", "Distance Styles"),
+        type: "styledText",
+      },
       distanceColor: {
-        label: "Distance Color",
+        label: msg("fields.distanceColor", "Distance Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      metaStyles: { label: "Meta Styles", type: "styledText" },
+      metaStyles: {
+        label: msg("fields.metaStyles", "Meta Styles"),
+        type: "styledText",
+      },
       metaColor: {
-        label: "Meta Color",
+        label: msg("fields.metaColor", "Meta Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       primaryButtonVariant: {
-        label: "Primary Button Variant",
+        label: msg("fields.primaryButtonVariant", "Primary Button Variant"),
         type: "select",
         options: [
-          { label: "Solid", value: "solid" },
-          { label: "Outline", value: "outline" },
+          { label: msg("fields.options.solid", "Solid"), value: "solid" },
+          { label: msg("fields.options.outline", "Outline"), value: "outline" },
         ],
       },
       primaryButtonColor: {
-        label: "Primary Button Color",
+        label: msg("fields.primaryButtonColor", "Primary Button Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       primaryButtonStyles: {
-        label: "Primary Button Styles",
+        label: msg("fields.primaryButtonStyles", "Primary Button Styles"),
         type: "styledButton",
       },
       secondaryButtonVariant: {
-        label: "Secondary Button Variant",
+        label: msg("fields.secondaryButtonVariant", "Secondary Button Variant"),
         type: "select",
         options: [
-          { label: "Solid", value: "solid" },
-          { label: "Outline", value: "outline" },
+          { label: msg("fields.options.solid", "Solid"), value: "solid" },
+          { label: msg("fields.options.outline", "Outline"), value: "outline" },
         ],
       },
       secondaryButtonColor: {
-        label: "Secondary Button Color",
+        label: msg("fields.secondaryButtonColor", "Secondary Button Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       secondaryButtonStyles: {
-        label: "Secondary Button Styles",
+        label: msg("fields.secondaryButtonStyles", "Secondary Button Styles"),
         type: "styledButton",
       },
       cardBackgroundColor: {
-        label: "Card Background Color",
+        label: msg("fields.cardBackgroundColor", "Card Background Color"),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },
-      radiusMiles: { label: "Radius Miles", type: "number" },
-      limit: { label: "Card Limit", type: "number" },
+      radiusMiles: {
+        label: msg("fields.radiusMiles", "Radius Miles"),
+        type: "number",
+      },
+      limit: { label: msg("fields.cardLimit", "Card Limit"), type: "number" },
       primaryCtaLabel: {
         type: "entityField",
-        label: "Primary CTA Label",
+        label: msg("fields.primaryCtaLabel", "Primary CTA Label"),
         filter: {
           types: ["type.string"],
           includeListsOnly: false,
@@ -898,7 +921,7 @@ export const MedicalSpecialistNearby: YextComponentConfig<MedicalSpecialistNearb
       },
       secondaryCtaLabel: {
         type: "entityField",
-        label: "Secondary CTA Label",
+        label: msg("fields.secondaryCtaLabel", "Secondary CTA Label"),
         filter: {
           types: ["type.string"],
           includeListsOnly: false,

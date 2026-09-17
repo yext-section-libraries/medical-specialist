@@ -10,6 +10,7 @@ import * as React from "react";
 import { AnalyticsScopeProvider, useAnalytics } from "@yext/pages-components";
 
 import {
+  msg,
   Background,
   createItemSource,
   EntityField,
@@ -36,11 +37,11 @@ type FaqItemFields = {
 };
 
 const faqItemsSource = createItemSource<FaqItemFields>({
-  label: "FAQ Items",
+  label: msg("fields.faqItems", "FAQ Items"),
   mappingFields: {
     question: {
       type: "entityField",
-      label: "Question",
+      label: msg("fields.question", "Question"),
       filter: {
         types: ["type.string"],
         includeListsOnly: false,
@@ -48,7 +49,7 @@ const faqItemsSource = createItemSource<FaqItemFields>({
     },
     answer: {
       type: "entityField",
-      label: "Answer",
+      label: msg("fields.answer", "Answer"),
       filter: {
         types: ["type.rich_text_v2"],
         includeListsOnly: false,
@@ -505,63 +506,63 @@ const MedicalSpecialistFaqComponent = (
 
 export const MedicalSpecialistFaq: YextComponentConfig<MedicalSpecialistFaqProps> =
   {
-    label: "FAQ",
+    label: msg("components.faq", "FAQ"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: { label: msg("fields.sectionStyles", "Section Styles"), type: "styledPageSection" },
         },
       },
       items: faqItemsSource.field,
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       faqItemBackgroundColor: {
-        label: "FAQ Item Background Color",
+        label: msg("fields.faqItemBackgroundColor", "FAQ Item Background Color"),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },
-      questionStyles: { label: "Question Styles", type: "styledText" },
+      questionStyles: { label: msg("fields.questionStyles", "Question Styles"), type: "styledText" },
       questionColor: {
-        label: "Question Color",
+        label: msg("fields.questionColor", "Question Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      answerStyles: { label: "Answer Styles", type: "styledText" },
+      answerStyles: { label: msg("fields.answerStyles", "Answer Styles"), type: "styledText" },
       answerColor: {
-        label: "Answer Color",
+        label: msg("fields.answerColor", "Answer Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },

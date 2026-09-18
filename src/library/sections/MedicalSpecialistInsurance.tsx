@@ -10,6 +10,7 @@ import * as React from "react";
 import { AnalyticsScopeProvider, useAnalytics } from "@yext/pages-components";
 
 import {
+  msg,
   Background,
   createItemSource,
   EntityField,
@@ -36,11 +37,11 @@ type InsuranceGroupFields = {
 };
 
 const insuranceGroupsSource = createItemSource<InsuranceGroupFields>({
-  label: "Insurance Groups",
+  label: msg("fields.insuranceGroups", "Insurance Groups"),
   mappingFields: {
     title: {
       type: "entityField",
-      label: "Title",
+      label: msg("fields.title", "Title"),
       filter: {
         types: ["type.string"],
         includeListsOnly: false,
@@ -48,7 +49,7 @@ const insuranceGroupsSource = createItemSource<InsuranceGroupFields>({
     },
     contents: {
       type: "entityField",
-      label: "Contents",
+      label: msg("fields.contents", "Contents"),
       filter: {
         types: ["type.rich_text_v2"],
         includeListsOnly: false,
@@ -563,83 +564,83 @@ const MedicalSpecialistInsuranceComponent = (
 
 export const MedicalSpecialistInsurance: YextComponentConfig<MedicalSpecialistInsuranceProps> =
   {
-    label: "Insurance",
+    label: msg("components.medicalSpecialistInsurance", "Insurance"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: { label: msg("fields.sectionStyles", "Section Styles"), type: "styledPageSection" },
         },
       },
       groups: insuranceGroupsSource.field,
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       accordionItemBackgroundColor: {
-        label: "Accordion Item Background Color",
+        label: msg("fields.accordionItemBackgroundColor", "Accordion Item Background Color"),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },
       description: {
-        label: "Description",
+        label: msg("fields.description", "Description"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.rich_text_v2"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
-      summaryStyles: { label: "Summary Styles", type: "styledText" },
+      summaryStyles: { label: msg("fields.summaryStyles", "Summary Styles"), type: "styledText" },
       summaryColor: {
-        label: "Summary Color",
+        label: msg("fields.summaryColor", "Summary Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      bodyStyles: { label: "Body Styles", type: "styledText" },
+      bodyStyles: { label: msg("fields.bodyStyles", "Body Styles"), type: "styledText" },
       bodyColor: {
-        label: "Body Color",
+        label: msg("fields.bodyColor", "Body Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },

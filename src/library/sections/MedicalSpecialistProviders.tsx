@@ -9,6 +9,7 @@ import {
 } from "../shared/sectionHelpers";
 
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import {
   AnalyticsScopeProvider,
   type ComplexImageType,
@@ -16,6 +17,7 @@ import {
 } from "@yext/pages-components";
 
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   createItemSource,
@@ -70,36 +72,36 @@ const providerTextValue = (
 });
 
 const providerCardsSource = createItemSource<ProviderCardFields>({
-  label: "Provider Cards",
+  label: msg("fields.providerCards", "Provider Cards"),
   mappingFields: {
     name: {
       type: "entityField",
-      label: "Name",
+      label: msg("fields.name", "Name"),
       filter: { types: ["type.string"], includeListsOnly: false },
     },
     role: {
       type: "entityField",
-      label: "Role",
+      label: msg("fields.role", "Role"),
       filter: { types: ["type.string"], includeListsOnly: false },
     },
     certificationLabel: {
       type: "entityField",
-      label: "Certification Label",
+      label: msg("fields.certificationLabel", "Certification Label"),
       filter: { types: ["type.string"], includeListsOnly: false },
     },
     certificationValue: {
       type: "entityField",
-      label: "Certification Value",
+      label: msg("fields.certificationValue", "Certification Value"),
       filter: { types: ["type.string"], includeListsOnly: false },
     },
     specialties: {
       type: "entityField",
-      label: "Specialties",
+      label: msg("fields.specialties", "Specialties"),
       filter: { types: ["type.string"], includeListsOnly: true },
     },
     image: {
       type: "entityField",
-      label: "Image",
+      label: msg("fields.image", "Image"),
       filter: { types: ["type.image"] },
     },
   },
@@ -541,6 +543,7 @@ a {
 const MedicalSpecialistProvidersComponent = (
   props: MedicalSpecialistProvidersProps & { id: string; puck: any },
 ) => {
+  const { t } = useTranslation();
   const streamDocument = useDocument<Record<string, unknown>>();
   const documentData = streamDocument ?? {};
   const locale =
@@ -818,7 +821,7 @@ const MedicalSpecialistProvidersComponent = (
                                 cardForeground,
                               )}
                             >
-                              Specialties
+                              {t("fields.specialties", "Specialties")}
                             </p>
                             <ul
                               className="medical-specialist-providers__specialties"
@@ -852,112 +855,112 @@ const MedicalSpecialistProvidersComponent = (
 
 export const MedicalSpecialistProviders: YextComponentConfig<MedicalSpecialistProvidersProps> =
   {
-    label: "Providers",
+    label: msg("components.medicalSpecialistProviders", "Providers"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
-          styles: { label: "Section Styles", type: "styledPageSection" },
+          styles: { label: msg("fields.sectionStyles", "Section Styles"), type: "styledPageSection" },
         },
       },
       cards: providerCardsSource.field,
       heading: {
-        label: "Heading",
+        label: msg("fields.heading", "Heading"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       description: {
-        label: "Description",
+        label: msg("fields.description", "Description"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.rich_text_v2"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       cta: {
-        label: "Call to Action",
+        label: msg("fields.callToAction", "Call to Action"),
         type: "comprehensiveCTA",
       },
-      nameStyles: { label: "Name Styles", type: "styledText" },
+      nameStyles: { label: msg("fields.nameStyles", "Name Styles"), type: "styledText" },
       nameColor: {
-        label: "Name Color",
+        label: msg("fields.nameColor", "Name Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      roleStyles: { label: "Role Styles", type: "styledText" },
+      roleStyles: { label: msg("fields.roleStyles", "Role Styles"), type: "styledText" },
       roleColor: {
-        label: "Role Color",
+        label: msg("fields.roleColor", "Role Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
-      bodyStyles: { label: "Body Styles", type: "styledText" },
+      bodyStyles: { label: msg("fields.bodyStyles", "Body Styles"), type: "styledText" },
       bodyColor: {
-        label: "Body Color",
+        label: msg("fields.bodyColor", "Body Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       cardBackgroundColor: {
-        label: "Card Background Color",
+        label: msg("fields.cardBackgroundColor", "Card Background Color"),
         type: "basicSelector",
         options: "BACKGROUND_COLOR",
       },
       cardImage: {
-        label: "Card Image",
+        label: msg("fields.cardImage", "Card Image"),
         type: "object",
         objectFields: {
-          styles: { label: "Image Styles", type: "styledImage" },
+          styles: { label: msg("fields.imageStyles", "Image Styles"), type: "styledImage" },
           aspectRatio: {
-            label: "Aspect Ratio",
+            label: msg("fields.aspectRatio", "Aspect Ratio"),
             type: "basicSelector",
             options: aspectRatioOptions,
           },
           imageConstrain: {
-            label: "Image Constrain",
+            label: msg("fields.imageConstrain", "Image Constrain"),
             type: "select",
             options: [
-              { label: "Fixed", value: "fixed" },
-              { label: "Filled", value: "filled" },
+              { label: msg("fields.options.fixed", "Fixed"), value: "fixed" },
+              { label: msg("fields.options.filled", "Filled"), value: "filled" },
             ],
           },
         },

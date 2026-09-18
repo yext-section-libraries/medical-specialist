@@ -19,6 +19,7 @@ import {
 } from "@yext/pages-components";
 
 import {
+  msg,
   Background,
   ComprehensiveCTA,
   EntityField,
@@ -820,97 +821,97 @@ const MedicalSpecialistHeroComponent = (
 
 export const MedicalSpecialistHero: YextComponentConfig<MedicalSpecialistHeroProps> =
   {
-    label: "Hero",
+    label: msg("components.hero", "Hero"),
     fields: {
       section: {
-        label: "Section",
+        label: msg("fields.section", "Section"),
         type: "object",
         objectFields: {
           backgroundColor: {
-            label: "Background Fill",
+            label: msg("fields.backgroundFill", "Background Fill"),
             type: "basicSelector",
             options: "BACKGROUND_COLOR",
           },
           visibleOnLivePage: {
-            label: "Visible on Live Page",
+            label: msg("fields.visibleOnLivePage", "Visible on Live Page"),
             type: "radio",
             options: [
-              { label: "Yes", value: true },
-              { label: "No", value: false },
+              { label: msg("fields.options.yes", "Yes"), value: true },
+              { label: msg("fields.options.no", "No"), value: false },
             ],
           },
           styles: {
-            label: "Section Styles",
+            label: msg("fields.sectionStyles", "Section Styles"),
             type: "styledPageSection",
           },
         },
       },
       eyebrow: {
-        label: "Eyebrow",
+        label: msg("fields.eyebrow", "Eyebrow"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       title: {
-        label: "Title",
+        label: msg("fields.title", "Title"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.string"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       description: {
-        label: "Description",
+        label: msg("fields.description", "Description"),
         type: "object",
         objectFields: {
           text: {
             type: "entityField",
-            label: "Text",
+            label: msg("fields.text", "Text"),
             filter: {
               types: ["type.rich_text_v2"],
               includeListsOnly: false,
             },
           },
           fontColor: {
-            label: "Text Color",
+            label: msg("fields.textColor", "Text Color"),
             type: "basicSelector",
             options: "SITE_COLOR",
           },
-          styles: { label: "Text Styles", type: "styledText" },
+          styles: { label: msg("fields.textStyles", "Text Styles"), type: "styledText" },
         },
       },
       ctas: {
-        label: "CTAs",
+        label: msg("fields.ctas", "CTAs"),
         type: "array",
         arrayFields: {
           cta: {
-            label: "Call to Action",
+            label: msg("fields.callToAction", "Call to Action"),
             type: "comprehensiveCTA",
           },
         },
@@ -939,35 +940,35 @@ export const MedicalSpecialistHero: YextComponentConfig<MedicalSpecialistHeroPro
           getCtaSummary(item, index),
       },
       imageBackgroundColor: {
-        label: "Image Background Color",
+        label: msg("fields.imageBackgroundColor", "Image Background Color"),
         type: "basicSelector",
         options: "SITE_COLOR",
       },
       heroImage: {
-        label: "Hero Image",
+        label: msg("fields.heroImage", "Hero Image"),
         type: "object",
         objectFields: {
           image: {
             type: "entityField",
-            label: "Image",
+            label: msg("fields.image", "Image"),
             filter: {
               types: ["type.image"],
             },
           },
           aspectRatio: {
-            label: "Aspect Ratio",
+            label: msg("fields.aspectRatio", "Aspect Ratio"),
             type: "basicSelector",
             options: aspectRatioOptions,
           },
           imageConstrain: {
-            label: "Image Constrain",
+            label: msg("fields.imageConstrain", "Image Constrain"),
             type: "select",
             options: [
-              { label: "Fixed", value: "fixed" },
-              { label: "Filled", value: "filled" },
+              { label: msg("fields.options.fixed", "Fixed"), value: "fixed" },
+              { label: msg("fields.options.filled", "Filled"), value: "filled" },
             ],
           },
-          styles: { label: "Image Styles", type: "styledImage" },
+          styles: { label: msg("fields.imageStyles", "Image Styles"), type: "styledImage" },
         },
       },
     },

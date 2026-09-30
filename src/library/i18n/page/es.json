@@ -1,14 +1,17 @@
 {
+  "address": "DIRECCIÓN",
   "breadcrumb": "Migaja de pan",
   "callToAction": "Llamado a la acción",
   "clearAll": "Borrar todo",
   "close": "Cerca",
   "closed": "Cerrado",
+  "currentLocation": "Ubicación actual",
   "customSearchArea": "Área de búsqueda personalizada",
   "distance": "Distancia",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> de la búsqueda",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> de {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> de ti",
+  "email": "Correo electrónico",
   "enableCookies": "Habilitar cookies",
   "fields": {
     "specialties": "Especialidades"

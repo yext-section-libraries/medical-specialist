@@ -1,14 +1,17 @@
 {
+  "address": "地址",
   "breadcrumb": "麵包屑",
   "callToAction": "號召性用語",
   "clearAll": "全部清除",
   "close": "關閉",
   "closed": "關閉",
+  "currentLocation": "目前位置",
   "customSearchArea": "自定義搜索區域",
   "distance": "距離",
   "distanceLineFromSearch": "來自搜尋的 <strong>{{distance}}</strong>",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> 來自 {{searchLocation}}",
   "distanceLineFromYou": "來自您的 <strong>{{distance}}</strong>",
+  "email": "電子郵件",
   "enableCookies": "啟用 Cookie",
   "fields": {
     "specialties": "專業領域"

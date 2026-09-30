@@ -1,14 +1,17 @@
 {
+  "address": "Indirizzo",
   "breadcrumb": "Breadcrumb",
   "callToAction": "Invito all'azione",
   "clearAll": "Cancella tutto",
   "close": "Vicino",
   "closed": "Chiuso",
+  "currentLocation": "Posizione attuale",
   "customSearchArea": "Area di ricerca personalizzata",
   "distance": "Distanza",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> dalla ricerca",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> da {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> da te",
+  "email": "E-mail",
   "enableCookies": "Abilita i cookie",
   "fields": {
     "specialties": "Specializzazioni"

@@ -33,11 +33,13 @@
     "phone": "Telefon",
     "reviews": "Yorumlar"
   },
+  "currentLocation": "Mevcut Konum",
   "customSearchArea": "Özel arama alanı",
   "distance": "Mesafe",
   "distanceLineFromSearch": "Aramadan <strong>{{distance}}</strong>",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong>, {{searchLocation}}'den",
   "distanceLineFromYou": "<strong>{{distance}}</strong> sizden",
+  "email": "E-posta",
   "enableCookies": "Çerezleri Etkinleştir",
   "fields": {
     "aboutImage": "Hakkında Görseli",

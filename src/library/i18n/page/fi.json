@@ -1,14 +1,17 @@
 {
+  "address": "Osoite",
   "breadcrumb": "Murupolku",
   "callToAction": "Toimintakehotus",
   "clearAll": "Tyhjennä kaikki",
   "close": "Sulje",
   "closed": "Suljettu",
+  "currentLocation": "Nykyinen sijainti",
   "customSearchArea": "Mukautettu hakualue",
   "distance": "Etäisyys",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> hausta",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> alkaen {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> sinulta",
+  "email": "Sähköposti",
   "enableCookies": "Ota evästeet käyttöön",
   "fields": {
     "specialties": "Erikoisalat"

@@ -1,14 +1,17 @@
 {
+  "address": "Cím",
   "breadcrumb": "Zsemlemorzsa",
   "callToAction": "Felhívás cselekvésre",
   "clearAll": "Összes törlése",
   "close": "Közeli",
   "closed": "Zárt",
+  "currentLocation": "Jelenlegi hely",
   "customSearchArea": "Egyedi keresési terület",
   "distance": "Távolság",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> a keresésből",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> od {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong>",
+  "email": "Email",
   "enableCookies": "Cookie-k engedélyezése",
   "fields": {
     "specialties": "Szakterületek"

@@ -1,14 +1,17 @@
 {
+  "address": "Adrese",
   "breadcrumb": "Rīvmaize",
   "callToAction": "Aicinājums uz darbību",
   "clearAll": "Notīrīt visu",
   "close": "Tuvs",
   "closed": "Slēgts",
+  "currentLocation": "Pašreizējā atrašanās vieta",
   "customSearchArea": "Pielāgota meklēšanas zona",
   "distance": "Attālums",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> no meklēšanas",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> no {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> no jums",
+  "email": "E-pasts",
   "enableCookies": "Iespējot sīkfailus",
   "fields": {
     "specialties": "Specializācijas"

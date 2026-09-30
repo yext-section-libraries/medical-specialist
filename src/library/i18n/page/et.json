@@ -1,14 +1,17 @@
 {
+  "address": "Aadress",
   "breadcrumb": "Riivsaia",
   "callToAction": "Üleskutse tegevusele",
   "clearAll": "Kustuta kõik",
   "close": "Sulgur",
   "closed": "Suletud",
+  "currentLocation": "Praegune asukoht",
   "customSearchArea": "Kohandatud otsinguala",
   "distance": "Kaugus",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> otsingust",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> alates {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> teilt",
+  "email": "Meil",
   "enableCookies": "Luba küpsised",
   "fields": {
     "specialties": "Erialad"

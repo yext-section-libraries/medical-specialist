@@ -1,14 +1,17 @@
 {
+  "address": "Adresa",
   "breadcrumb": "Strouha",
   "callToAction": "Výzva k akci",
   "clearAll": "Vymazat vše",
   "close": "Blízko",
   "closed": "ZAVŘENO",
+  "currentLocation": "Aktuální poloha",
   "customSearchArea": "Vlastní vyhledávací oblast",
   "distance": "Vzdálenost",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> z vyhledávání",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> od {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> od vás",
+  "email": "E-mail",
   "enableCookies": "Povolit soubory cookie",
   "fields": {
     "specialties": "Specializace"

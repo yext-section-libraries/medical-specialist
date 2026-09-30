@@ -33,11 +33,13 @@
     "phone": "Telefon",
     "reviews": "Arvustused"
   },
+  "currentLocation": "Praegune asukoht",
   "customSearchArea": "Kohandatud otsinguala",
   "distance": "Kaugus",
   "distanceLineFromSearch": "<strong>{{distance}}</strong> otsingust",
   "distanceLineFromSearchLocation": "<strong>{{distance}}</strong> alates {{searchLocation}}",
   "distanceLineFromYou": "<strong>{{distance}}</strong> teilt",
+  "email": "Meil",
   "enableCookies": "Luba küpsised",
   "fields": {
     "aboutImage": "Tutvustuse pilt",

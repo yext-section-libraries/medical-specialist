@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 
 import { isValidElement } from "react";
@@ -212,7 +214,7 @@ const MedicalSpecialistBannerComponent: PuckComponent<
  */
 export const MedicalSpecialistBanner: YextComponentConfig<MedicalSpecialistBannerProps> =
   {
-    label: msg("components.banner", "Banner"),
+    label: msg("components.banner", "Banner Section"),
     fields: toPuckFields<MedicalSpecialistBannerProps>(
       MedicalSpecialistBannerFields,
     ),
@@ -253,7 +255,7 @@ export const MedicalSpecialistBanner: YextComponentConfig<MedicalSpecialistBanne
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistBanner",
-  displayName: "Banner",
-  description: "Banner",
+  displayName: "Banner Section",
+  description: "Banner Section",
   pageSetTypes: ["ENTITY"],
 };

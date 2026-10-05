@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 import {
   aspectRatioOptions,
@@ -258,26 +260,28 @@ const getButtonStyle = (
   const variant = value.styles?.variant ?? "primary";
   const accentColor = toThemeCss(
     typeof buttonColor === "string" ? buttonColor : buttonColor?.selectedColor,
-    "#7d9e77",
+    "var(--colors-palette-primary)",
   );
+
+  const typography = variant === "link" ? "link" : "button";
 
   return {
     fontFamily:
       buttonStyles?.fontFamily === "default" || !buttonStyles?.fontFamily
-        ? '"Manrope", Inter, sans-serif'
+        ? `var(--fontFamily-${typography}-fontFamily)`
         : buttonStyles.fontFamily,
-    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? "16px",
-    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? "700",
+    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? `var(--fontSize-${typography}-fontSize)`,
+    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? `var(--fontWeight-${typography}-fontWeight)`,
     fontStyle:
-      buttonStyles?.fontStyle === "default"
-        ? undefined
-        : buttonStyles?.fontStyle,
+      buttonStyles?.fontStyle === "default" || !buttonStyles?.fontStyle
+        ? `var(--fontStyle-${typography}-fontStyle)`
+        : buttonStyles.fontStyle,
     textTransform:
-      buttonStyles?.textTransform === "default"
-        ? undefined
-        : buttonStyles?.textTransform,
-    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? "-0.02em",
-    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "6px",
+      buttonStyles?.textTransform === "default" || !buttonStyles?.textTransform
+        ? `var(--textTransform-${typography}-textTransform)`
+        : buttonStyles.textTransform,
+    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? `var(--letterSpacing-${typography}-letterSpacing)`,
+    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "var(--borderRadius-button-borderRadius)",
     color: variant === "primary" ? "#ffffff" : accentColor,
     backgroundColor: variant === "primary" ? accentColor : "transparent",
     borderColor: accentColor,
@@ -290,91 +294,8 @@ const isRichText = (value: unknown): value is RichText =>
   ("html" in value || "json" in value);
 
 const styles = `
-p {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-li {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-h1 {
-  font-family: var(--fontFamily-h1-fontFamily);
-  font-size: var(--fontSize-h1-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h1-fontWeight);
-  font-style: var(--fontStyle-h1-fontStyle);
-  text-transform: var(--textTransform-h1-textTransform);
-}
-
-h2 {
-  font-family: var(--fontFamily-h2-fontFamily);
-  font-size: var(--fontSize-h2-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h2-fontWeight);
-  font-style: var(--fontStyle-h2-fontStyle);
-  text-transform: var(--textTransform-h2-textTransform);
-}
-
-h3 {
-  font-family: var(--fontFamily-h3-fontFamily);
-  font-size: var(--fontSize-h3-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h3-fontWeight);
-  font-style: var(--fontStyle-h3-fontStyle);
-  text-transform: var(--textTransform-h3-textTransform);
-}
-
-h4 {
-  font-family: var(--fontFamily-h4-fontFamily);
-  font-size: var(--fontSize-h4-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h4-fontWeight);
-  font-style: var(--fontStyle-h4-fontStyle);
-  text-transform: var(--textTransform-h4-textTransform);
-}
-
-h5 {
-  font-family: var(--fontFamily-h5-fontFamily);
-  font-size: var(--fontSize-h5-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h5-fontWeight);
-  font-style: var(--fontStyle-h5-fontStyle);
-  text-transform: var(--textTransform-h5-textTransform);
-}
-
-h6 {
-  font-family: var(--fontFamily-h6-fontFamily);
-  font-size: var(--fontSize-h6-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h6-fontWeight);
-  font-style: var(--fontStyle-h6-fontStyle);
-  text-transform: var(--textTransform-h6-textTransform);
-}
-
-a {
-  font-family: var(--fontFamily-link-fontFamily);
-  font-size: var(--fontSize-link-fontSize);
-  font-weight: var(--fontWeight-link-fontWeight);
-  font-style: var(--fontStyle-link-fontStyle);
-  line-height: 1.5;
-  text-decoration: underline;
-  text-transform: var(--textTransform-link-textTransform);
-  letter-spacing: var(--letterSpacing-link-letterSpacing);
-}
-
 .medical-specialist-providers__inner {
-  max-width: 1200px;
+  max-width: var(--maxWidth-pageSection-contentWidth);
   margin: 0 auto;
   display: grid;
   gap: 24px;
@@ -412,7 +333,6 @@ a {
   min-height: 48px;
   padding: 0 18px;
   border: 1px solid currentColor;
-  text-decoration: none;
   transition: filter 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -431,20 +351,19 @@ a {
 }
 
 .medical-specialist-providers__card {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--colors-palette-secondary);
   border: 1px solid rgba(255, 255, 255, 0);
-  border-radius: 20px;
+  border-radius: var(--borderRadius-image-borderRadius);
   padding: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
 }
 
 .medical-specialist-providers__image {
   height: 300px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--borderRadius-image-borderRadius);
 }
 
 .medical-specialist-providers__image img {
@@ -473,7 +392,7 @@ a {
 }
 
 .medical-specialist-providers__meta-label {
-  color: rgb(153, 153, 153);
+  color: inherit;
   font-style: italic;
 }
 
@@ -499,13 +418,9 @@ a {
 
 @media (max-width: 809px) {
   .medical-specialist-providers__heading {
-    font-size: 30px !important;
-    line-height: 1.08 !important;
   }
 
   .medical-specialist-providers__name {
-    font-size: 20px !important;
-    line-height: 1.15 !important;
   }
 
   .medical-specialist-providers__intro,
@@ -555,9 +470,9 @@ const MedicalSpecialistProvidersComponent = (
         ? documentData.locale
         : "en";
   const sectionWidth =
-    pxOrUndefined(props.section.styles.contentWidth) ?? "1280px";
+    pxOrUndefined(props.section.styles.contentWidth) ?? "var(--maxWidth-pageSection-contentWidth)";
   const verticalPadding =
-    pxOrUndefined(props.section.styles.verticalPadding) ?? "16px";
+    pxOrUndefined(props.section.styles.verticalPadding) ?? "var(--padding-pageSection-verticalPadding)";
   const sectionForeground = getReadableSectionForeground(
     props.section.backgroundColor,
   );
@@ -599,7 +514,6 @@ const MedicalSpecialistProvidersComponent = (
             ...getSurfaceColorStyle(
               props.section.backgroundColor,
               streamDocument,
-              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             padding: `${verticalPadding} 40px`,
           }}
@@ -620,7 +534,7 @@ const MedicalSpecialistProvidersComponent = (
                     style={getTextStyle(
                       props.heading.styles,
                       props.heading.fontColor,
-                      '"Manrope", Inter, sans-serif',
+                      "var(--fontFamily-h2-fontFamily)",
                       sectionForeground,
                     )}
                   >
@@ -639,7 +553,7 @@ const MedicalSpecialistProvidersComponent = (
                     style={getTextStyle(
                       props.description.styles,
                       props.description.fontColor,
-                      "'Krub', 'Krub Fallback', sans-serif",
+                      "var(--fontFamily-body-fontFamily)",
                       sectionForeground,
                     )}
                   >
@@ -730,10 +644,6 @@ const MedicalSpecialistProvidersComponent = (
                         ...getSurfaceColorStyle(
                           props.cardBackgroundColor,
                           streamDocument,
-                          {
-                            fallbackBackgroundColor:
-                              "rgba(255, 255, 255, 0.5)",
-                          },
                         ),
                       }}
                     >
@@ -744,7 +654,7 @@ const MedicalSpecialistProvidersComponent = (
                             borderRadius:
                               pxOrUndefined(
                                 props.cardImage.styles.borderRadius,
-                              ) ?? "16px",
+                              ) ?? "var(--borderRadius-image-borderRadius)",
                           }}
                         >
                           <Image
@@ -767,7 +677,7 @@ const MedicalSpecialistProvidersComponent = (
                           style={getTextStyle(
                             props.nameStyles,
                             props.nameColor,
-                            "'Krub', 'Krub Fallback', sans-serif",
+                            "var(--fontFamily-body-fontFamily)",
                             cardForeground,
                           )}
                         >
@@ -778,7 +688,7 @@ const MedicalSpecialistProvidersComponent = (
                           style={getTextStyle(
                             props.roleStyles,
                             props.roleColor,
-                            "'Krub', 'Krub Fallback', sans-serif",
+                            "var(--fontFamily-body-fontFamily)",
                             cardForeground,
                           )}
                         >
@@ -790,7 +700,7 @@ const MedicalSpecialistProvidersComponent = (
                             style={getTextStyle(
                               props.bodyStyles,
                               props.bodyColor,
-                              "'Krub', 'Krub Fallback', sans-serif",
+                              "var(--fontFamily-body-fontFamily)",
                               cardForeground,
                             )}
                           >
@@ -803,7 +713,7 @@ const MedicalSpecialistProvidersComponent = (
                             style={getTextStyle(
                               props.bodyStyles,
                               props.bodyColor,
-                              "'Krub', 'Krub Fallback', sans-serif",
+                              "var(--fontFamily-body-fontFamily)",
                               cardForeground,
                             )}
                           >
@@ -817,7 +727,7 @@ const MedicalSpecialistProvidersComponent = (
                               style={getTextStyle(
                                 props.bodyStyles,
                                 props.bodyColor,
-                                "'Krub', 'Krub Fallback', sans-serif",
+                                "var(--fontFamily-body-fontFamily)",
                                 cardForeground,
                               )}
                             >
@@ -828,7 +738,7 @@ const MedicalSpecialistProvidersComponent = (
                               style={getTextStyle(
                                 props.bodyStyles,
                                 props.bodyColor,
-                                "'Krub', 'Krub Fallback', sans-serif",
+                                "var(--fontFamily-body-fontFamily)",
                                 cardForeground,
                               )}
                             >
@@ -855,7 +765,7 @@ const MedicalSpecialistProvidersComponent = (
 
 export const MedicalSpecialistProviders: YextComponentConfig<MedicalSpecialistProvidersProps> =
   {
-    label: msg("components.medicalSpecialistProviders", "Providers"),
+    label: msg("components.medicalSpecialistProviders", "Providers Section"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -1088,7 +998,7 @@ export const MedicalSpecialistProviders: YextComponentConfig<MedicalSpecialistPr
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistProviders",
-  displayName: "Providers",
-  description: "Providers",
+  displayName: "Providers Section",
+  description: "Providers Section",
   pageSetTypes: ["ENTITY"],
 };

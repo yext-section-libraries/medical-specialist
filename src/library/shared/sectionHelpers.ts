@@ -36,8 +36,7 @@ export const getThemeToken = (
 export const getReadableSectionForeground = (
   backgroundColor?: ThemeColor,
 ): string =>
-  getThemeToken(backgroundColor?.contrastingColor, "palette-quaternary") ??
-  "palette-quaternary";
+  getThemeToken(backgroundColor?.contrastingColor) ?? "black";
 
 export const getTextColorCss = (
   color?: ThemeColor | string,

@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 
 import * as React from "react";
@@ -71,7 +73,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
     return props.puck.isEditing ? (
       <p
         style={{
-          fontFamily: "Arial, Helvetica, sans-serif",
+          fontFamily: "var(--fontFamily-link-fontFamily)",
           padding: "18px 24px",
         }}
       >
@@ -221,7 +223,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
 
 export const MedicalSpecialistBreadcrumbs: YextComponentConfig<MedicalSpecialistBreadcrumbsProps> =
   {
-    label: msg("components.breadcrumbs", "Breadcrumbs"),
+    label: msg("components.breadcrumbs", "Breadcrumbs Section"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -308,7 +310,7 @@ export const MedicalSpecialistBreadcrumbs: YextComponentConfig<MedicalSpecialist
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistBreadcrumbs",
-  displayName: "Breadcrumbs",
-  description: "Breadcrumbs",
+  displayName: "Breadcrumbs Section",
+  description: "Breadcrumbs Section",
   pageSetTypes: ["ENTITY"],
 };

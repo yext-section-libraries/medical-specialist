@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 import {
   getReadableSectionForeground,
@@ -169,91 +171,8 @@ const renderStars = (rating?: number) => {
 };
 
 const styles = `
-p {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-li {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-h1 {
-  font-family: var(--fontFamily-h1-fontFamily);
-  font-size: var(--fontSize-h1-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h1-fontWeight);
-  font-style: var(--fontStyle-h1-fontStyle);
-  text-transform: var(--textTransform-h1-textTransform);
-}
-
-h2 {
-  font-family: var(--fontFamily-h2-fontFamily);
-  font-size: var(--fontSize-h2-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h2-fontWeight);
-  font-style: var(--fontStyle-h2-fontStyle);
-  text-transform: var(--textTransform-h2-textTransform);
-}
-
-h3 {
-  font-family: var(--fontFamily-h3-fontFamily);
-  font-size: var(--fontSize-h3-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h3-fontWeight);
-  font-style: var(--fontStyle-h3-fontStyle);
-  text-transform: var(--textTransform-h3-textTransform);
-}
-
-h4 {
-  font-family: var(--fontFamily-h4-fontFamily);
-  font-size: var(--fontSize-h4-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h4-fontWeight);
-  font-style: var(--fontStyle-h4-fontStyle);
-  text-transform: var(--textTransform-h4-textTransform);
-}
-
-h5 {
-  font-family: var(--fontFamily-h5-fontFamily);
-  font-size: var(--fontSize-h5-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h5-fontWeight);
-  font-style: var(--fontStyle-h5-fontStyle);
-  text-transform: var(--textTransform-h5-textTransform);
-}
-
-h6 {
-  font-family: var(--fontFamily-h6-fontFamily);
-  font-size: var(--fontSize-h6-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h6-fontWeight);
-  font-style: var(--fontStyle-h6-fontStyle);
-  text-transform: var(--textTransform-h6-textTransform);
-}
-
-a {
-  font-family: var(--fontFamily-link-fontFamily);
-  font-size: var(--fontSize-link-fontSize);
-  font-weight: var(--fontWeight-link-fontWeight);
-  font-style: var(--fontStyle-link-fontStyle);
-  line-height: 1.5;
-  text-decoration: underline;
-  text-transform: var(--textTransform-link-textTransform);
-  letter-spacing: var(--letterSpacing-link-letterSpacing);
-}
-
 .medical-specialist-reviews__inner {
-  max-width: 1200px;
+  max-width: var(--maxWidth-pageSection-contentWidth);
   margin: 0 auto;
   display: grid;
   gap: 24px;
@@ -263,7 +182,6 @@ a {
   margin: 0;
   text-align: center;
   line-height: 1.1;
-  letter-spacing: -0.05em;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -275,9 +193,9 @@ a {
 }
 
 .medical-specialist-reviews__card {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--colors-palette-secondary);
   border: 1px solid rgba(38, 14, 1, 0.12);
-  border-radius: 20px;
+  border-radius: var(--borderRadius-image-borderRadius);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -285,17 +203,15 @@ a {
 }
 
 .medical-specialist-reviews__stars {
-  letter-spacing: 2px;
-  font-size: 18px;
+  font-size: var(--fontSize-body-fontSize);
   line-height: 1;
 }
 
 .medical-specialist-reviews__rating-text {
   margin: 0;
-  font-family: "'Krub', 'Krub Fallback', sans-serif", Inter, sans-serif;
-  font-size: 14px;
+  font-family: var(--fontFamily-body-fontFamily);
+  font-size: var(--fontSize-body-fontSize);
   line-height: 1.4;
-  letter-spacing: -0.02em;
 }
 
 .medical-specialist-reviews__quote,
@@ -306,34 +222,32 @@ a {
 }
 
 .medical-specialist-reviews__date {
-  font-family: "'Krub', 'Krub Fallback', sans-serif", Inter, sans-serif;
-  font-size: 14px;
+  font-family: var(--fontFamily-body-fontFamily);
+  font-size: var(--fontSize-body-fontSize);
   line-height: 1.4;
-  letter-spacing: -0.02em;
-  color: rgba(38, 14, 1, 0.58);
+  color: inherit;
 }
 
 .medical-specialist-reviews__response {
   padding-top: 8px;
   border-top: 1px solid rgba(38, 14, 1, 0.1);
-  font-family: "'Krub', 'Krub Fallback', sans-serif", Inter, sans-serif;
-  font-size: 15px;
+  font-family: var(--fontFamily-body-fontFamily);
+  font-size: var(--fontSize-body-fontSize);
   line-height: 1.5;
-  letter-spacing: -0.02em;
-  color: rgba(38, 14, 1, 0.72);
+  color: inherit;
 }
 
 .medical-specialist-reviews__empty {
   margin: 0 auto;
   max-width: 720px;
   padding: 18px 20px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.58);
+  border-radius: var(--borderRadius-image-borderRadius);
+  background: var(--colors-palette-secondary);
   border: 1px dashed rgba(38, 14, 1, 0.18);
   text-align: center;
-  font-family: "'Krub', 'Krub Fallback', sans-serif", Inter, sans-serif;
+  font-family: var(--fontFamily-body-fontFamily);
   line-height: 1.5;
-  color: rgba(38, 14, 1, 0.68);
+  color: inherit;
 }
 
 @media (max-width: 1199px) {
@@ -345,8 +259,6 @@ a {
 
 @media (max-width: 809px) {
   .medical-specialist-reviews__heading {
-    font-size: 30px !important;
-    line-height: 1.08 !important;
   }
 
   .medical-specialist-reviews__grid {
@@ -367,9 +279,9 @@ const MedicalSpecialistReviewsComponent = (
   const { t } = useTranslation();
   const streamDocument = useDocument<ReviewsDocument>();
   const sectionWidth =
-    pxOrUndefined(props.section.styles.contentWidth) ?? "1280px";
+    pxOrUndefined(props.section.styles.contentWidth) ?? "var(--maxWidth-pageSection-contentWidth)";
   const verticalPadding =
-    pxOrUndefined(props.section.styles.verticalPadding) ?? "16px";
+    pxOrUndefined(props.section.styles.verticalPadding) ?? "var(--padding-pageSection-verticalPadding)";
   const sectionForeground = getReadableSectionForeground(
     props.section.backgroundColor,
   );
@@ -468,7 +380,6 @@ const MedicalSpecialistReviewsComponent = (
               ...getSurfaceColorStyle(
                 props.section.backgroundColor,
                 streamDocument,
-                { fallbackBackgroundColor: "#fdf7f4" },
               ),
               padding: `${verticalPadding} 40px`,
             }}
@@ -487,7 +398,7 @@ const MedicalSpecialistReviewsComponent = (
                   style={getTextStyle(
                     normalizedHeading.styles,
                     normalizedHeading.fontColor,
-                    '"Manrope", Inter, sans-serif',
+                    "var(--fontFamily-h2-fontFamily)",
                     sectionForeground,
                   )}
                 >
@@ -535,7 +446,6 @@ const MedicalSpecialistReviewsComponent = (
             ...getSurfaceColorStyle(
               props.section.backgroundColor,
               streamDocument,
-              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             padding: `${verticalPadding} 40px`,
           }}
@@ -554,7 +464,7 @@ const MedicalSpecialistReviewsComponent = (
                 style={getTextStyle(
                   normalizedHeading.styles,
                   normalizedHeading.fontColor,
-                  '"Manrope", Inter, sans-serif',
+                  "var(--fontFamily-h2-fontFamily)",
                   sectionForeground,
                 )}
               >
@@ -566,7 +476,7 @@ const MedicalSpecialistReviewsComponent = (
                 ...getTextStyle(
                   props.summaryStyles,
                   props.summaryColor,
-                  "'Krub', 'Krub Fallback', sans-serif",
+                  "var(--fontFamily-body-fontFamily)",
                 ),
                 textAlign: "center",
                 margin: "0",
@@ -607,9 +517,6 @@ const MedicalSpecialistReviewsComponent = (
                       ...getSurfaceColorStyle(
                         props.reviewCardBackgroundColor,
                         streamDocument,
-                        {
-                          fallbackBackgroundColor: "rgba(255, 255, 255, 0.5)",
-                        },
                       ),
                       color: reviewCardForegroundCss,
                     }}
@@ -619,7 +526,7 @@ const MedicalSpecialistReviewsComponent = (
                       style={{
                         color: toThemeCss(
                           props.starColor?.selectedColor,
-                          "#7d9e77",
+                          "var(--colors-palette-primary)",
                         ),
                       }}
                       aria-label={t("ratingOutOfFiveStarsAria", {
@@ -649,7 +556,7 @@ const MedicalSpecialistReviewsComponent = (
                         style={getTextStyle(
                           props.quoteStyles,
                           props.quoteColor,
-                          "'Krub', 'Krub Fallback', sans-serif",
+                          "var(--fontFamily-body-fontFamily)",
                           reviewCardForeground,
                         )}
                       >
@@ -661,7 +568,7 @@ const MedicalSpecialistReviewsComponent = (
                       style={getTextStyle(
                         props.authorStyles,
                         props.authorColor,
-                        "'Krub', 'Krub Fallback', sans-serif",
+                        "var(--fontFamily-body-fontFamily)",
                         reviewCardForeground,
                       )}
                     >
@@ -699,7 +606,7 @@ const MedicalSpecialistReviewsComponent = (
 
 export const MedicalSpecialistReviews: YextComponentConfig<MedicalSpecialistReviewsProps> =
   {
-    label: msg("components.reviews", "Reviews"),
+    label: msg("components.reviews", "Reviews Section"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -859,7 +766,7 @@ export const MedicalSpecialistReviews: YextComponentConfig<MedicalSpecialistRevi
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistReviews",
-  displayName: "Reviews",
-  description: "Reviews",
+  displayName: "Reviews Section",
+  description: "Reviews Section",
   pageSetTypes: ["ENTITY"],
 };

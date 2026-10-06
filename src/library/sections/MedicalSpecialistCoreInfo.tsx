@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 import {
   getContrastTextColor,
@@ -132,23 +134,25 @@ const getButtonStyle = (
   const textColor =
     variant === "primary" ? getContrastTextColor(buttonColor) : accentTextColor;
 
+  const typography = isLinkVariant ? "link" : "button";
+
   const style: React.CSSProperties = {
     fontFamily:
       buttonStyles?.fontFamily === "default" || !buttonStyles?.fontFamily
-        ? '"Manrope", Inter, sans-serif'
+        ? `var(--fontFamily-${typography}-fontFamily)`
         : buttonStyles.fontFamily,
-    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? "16px",
-    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? "700",
+    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? `var(--fontSize-${typography}-fontSize)`,
+    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? `var(--fontWeight-${typography}-fontWeight)`,
     fontStyle:
-      buttonStyles?.fontStyle === "default"
-        ? undefined
-        : buttonStyles?.fontStyle,
+      buttonStyles?.fontStyle === "default" || !buttonStyles?.fontStyle
+        ? `var(--fontStyle-${typography}-fontStyle)`
+        : buttonStyles.fontStyle,
     textTransform:
-      buttonStyles?.textTransform === "default"
-        ? undefined
-        : buttonStyles?.textTransform,
-    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? "-0.02em",
-    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "6px",
+      buttonStyles?.textTransform === "default" || !buttonStyles?.textTransform
+        ? `var(--textTransform-${typography}-textTransform)`
+        : buttonStyles.textTransform,
+    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? `var(--letterSpacing-${typography}-letterSpacing)`,
+    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "var(--borderRadius-button-borderRadius)",
     display: "inline-flex",
     alignItems: "center",
     gap: "0.35em",
@@ -244,89 +248,6 @@ const HoursIcon = () => (
 );
 
 const styles = `
-p {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-li {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-h1 {
-  font-family: var(--fontFamily-h1-fontFamily);
-  font-size: var(--fontSize-h1-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h1-fontWeight);
-  font-style: var(--fontStyle-h1-fontStyle);
-  text-transform: var(--textTransform-h1-textTransform);
-}
-
-h2 {
-  font-family: var(--fontFamily-h2-fontFamily);
-  font-size: var(--fontSize-h2-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h2-fontWeight);
-  font-style: var(--fontStyle-h2-fontStyle);
-  text-transform: var(--textTransform-h2-textTransform);
-}
-
-h3 {
-  font-family: var(--fontFamily-h3-fontFamily);
-  font-size: var(--fontSize-h3-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h3-fontWeight);
-  font-style: var(--fontStyle-h3-fontStyle);
-  text-transform: var(--textTransform-h3-textTransform);
-}
-
-h4 {
-  font-family: var(--fontFamily-h4-fontFamily);
-  font-size: var(--fontSize-h4-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h4-fontWeight);
-  font-style: var(--fontStyle-h4-fontStyle);
-  text-transform: var(--textTransform-h4-textTransform);
-}
-
-h5 {
-  font-family: var(--fontFamily-h5-fontFamily);
-  font-size: var(--fontSize-h5-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h5-fontWeight);
-  font-style: var(--fontStyle-h5-fontStyle);
-  text-transform: var(--textTransform-h5-textTransform);
-}
-
-h6 {
-  font-family: var(--fontFamily-h6-fontFamily);
-  font-size: var(--fontSize-h6-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h6-fontWeight);
-  font-style: var(--fontStyle-h6-fontStyle);
-  text-transform: var(--textTransform-h6-textTransform);
-}
-
-a {
-  font-family: var(--fontFamily-link-fontFamily);
-  font-size: var(--fontSize-link-fontSize);
-  font-weight: var(--fontWeight-link-fontWeight);
-  font-style: var(--fontStyle-link-fontStyle);
-  line-height: 1.5;
-  text-decoration: underline;
-  text-transform: var(--textTransform-link-textTransform);
-  letter-spacing: var(--letterSpacing-link-letterSpacing);
-}
-
 .medical-specialist-core-info {
   position: relative;
   overflow: hidden;
@@ -364,17 +285,15 @@ a {
   margin: 0;
   text-align: center;
   line-height: 1.1;
-  letter-spacing: -0.05em;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
 .medical-specialist-core-info__supporting {
   margin: 0;
-  max-width: 760px;
+  max-width: var(--maxWidth-pageSection-contentWidth);
   text-align: center;
   line-height: 1.5;
-  letter-spacing: -0.02em;
 }
 
 .medical-specialist-core-info__grid {
@@ -413,7 +332,6 @@ a {
 .medical-specialist-core-info__title {
   margin: 0;
   line-height: 1.1;
-  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -427,14 +345,13 @@ a {
 }
 
 .medical-specialist-core-info__body {
-  color: rgba(38, 14, 1, 0.7);
+  color: inherit;
 }
 
 .medical-specialist-core-info__body,
 .medical-specialist-core-info__body li {
   margin: 0;
   line-height: 1.95;
-  letter-spacing: -0.02em;
 }
 
 .medical-specialist-core-info__details .rtf-wrapper,
@@ -459,7 +376,7 @@ a {
 }
 
 .medical-specialist-core-info__visit-phone-label {
-  font-weight: 500;
+  font-weight: var(--fontWeight-body-fontWeight);
 }
 
 .medical-specialist-core-info__visit-link {
@@ -474,7 +391,6 @@ a {
 .medical-specialist-core-info__visit-button {
   display: inline-block;
   margin: 8px 0 14px;
-  text-decoration: none;
   width: fit-content;
   max-width: 100%;
 }
@@ -563,7 +479,7 @@ a {
 .medical-specialist-core-info__hours-row.is-today .medical-specialist-core-info__hours-day,
 .medical-specialist-core-info__hours-row.is-today .medical-specialist-core-info__hours-time {
   color: var(--medical-specialist-core-info-foreground, inherit);
-  font-weight: 700;
+  font-weight: var(--fontWeight-body-fontWeight);
 }
 
 @media (max-width: 1199px) {
@@ -574,13 +490,9 @@ a {
 
 @media (max-width: 809px) {
   .medical-specialist-core-info__heading {
-    font-size: 30px !important;
-    line-height: 1.08 !important;
   }
 
   .medical-specialist-core-info__title {
-    font-size: 22px !important;
-    line-height: 1.12 !important;
   }
 
   .medical-specialist-core-info__grid {
@@ -590,7 +502,7 @@ a {
   .medical-specialist-core-info__body,
   .medical-specialist-core-info__body li,
   .medical-specialist-core-info__hours {
-    font-size: 16px;
+    font-size: var(--fontSize-body-fontSize);
     line-height: 1.65;
   }
 
@@ -883,9 +795,9 @@ const MedicalSpecialistCoreInfoComponent = (
     resolveComponentData(props.details.text as any, locale, streamDocument) ??
     props.details.text.constantValue;
   const sectionWidth =
-    pxOrUndefined(props.section.styles.contentWidth) ?? "1280px";
+    pxOrUndefined(props.section.styles.contentWidth) ?? "var(--maxWidth-pageSection-contentWidth)";
   const verticalPadding =
-    pxOrUndefined(props.section.styles.verticalPadding) ?? "16px";
+    pxOrUndefined(props.section.styles.verticalPadding) ?? "var(--padding-pageSection-verticalPadding)";
   const sectionForeground = getReadableSectionForeground(
     props.section.backgroundColor,
   );
@@ -899,7 +811,7 @@ const MedicalSpecialistCoreInfoComponent = (
   const bodyTextStyle = getTextStyle(
     props.bodyStyles,
     undefined,
-    "'Krub', 'Krub Fallback', sans-serif",
+    "var(--fontFamily-body-fontFamily)",
     sectionForeground,
   );
   const bodyTextColor = getTextColorCss(undefined, sectionForeground);
@@ -923,7 +835,6 @@ const MedicalSpecialistCoreInfoComponent = (
             ...getSurfaceColorStyle(
               props.section.backgroundColor,
               streamDocument,
-              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             padding: `${verticalPadding} 40px`,
           }}
@@ -947,7 +858,7 @@ const MedicalSpecialistCoreInfoComponent = (
                       style={getTextStyle(
                         props.heading.styles,
                         props.heading.fontColor,
-                        '"Manrope", Inter, sans-serif',
+                        "var(--fontFamily-h2-fontFamily)",
                         sectionForeground,
                       )}
                     >
@@ -980,7 +891,7 @@ const MedicalSpecialistCoreInfoComponent = (
                         style={getTextStyle(
                           props.cardTitleStyles,
                           props.cardTitleColor,
-                          '"Manrope", Inter, sans-serif',
+                          "var(--fontFamily-h2-fontFamily)",
                           sectionForeground,
                         )}
                       >
@@ -1202,7 +1113,7 @@ const MedicalSpecialistCoreInfoComponent = (
                         style={getTextStyle(
                           props.cardTitleStyles,
                           props.cardTitleColor,
-                          '"Manrope", Inter, sans-serif',
+                          "var(--fontFamily-h2-fontFamily)",
                           sectionForeground,
                         )}
                       >
@@ -1269,7 +1180,7 @@ const MedicalSpecialistCoreInfoComponent = (
                         style={getTextStyle(
                           props.cardTitleStyles,
                           props.cardTitleColor,
-                          '"Manrope", Inter, sans-serif',
+                          "var(--fontFamily-h2-fontFamily)",
                           sectionForeground,
                         )}
                       >
@@ -1361,7 +1272,7 @@ const MedicalSpecialistCoreInfoComponent = (
 
 export const MedicalSpecialistCoreInfo: YextComponentConfig<MedicalSpecialistCoreInfoProps> =
   {
-    label: msg("components.medicalSpecialistCoreInfo", "Core Info"),
+    label: msg("components.coreInfo", "Core Info"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),

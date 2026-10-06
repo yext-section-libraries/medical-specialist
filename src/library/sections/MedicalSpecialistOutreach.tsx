@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 import {
   aspectRatioOptions,
@@ -90,26 +92,28 @@ const getButtonStyle = (value: OutreachCtaValue): React.CSSProperties => {
   const variant = value.styles?.variant ?? "primary";
   const accentColor = toThemeCss(
     typeof buttonColor === "string" ? buttonColor : buttonColor?.selectedColor,
-    "#7d9e77",
+    "var(--colors-palette-primary)",
   );
+
+  const typography = variant === "link" ? "link" : "button";
 
   return {
     fontFamily:
       buttonStyles?.fontFamily === "default" || !buttonStyles?.fontFamily
-        ? '"Manrope", Inter, sans-serif'
+        ? `var(--fontFamily-${typography}-fontFamily)`
         : buttonStyles.fontFamily,
-    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? "16px",
-    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? "700",
+    fontSize: pxOrUndefined(buttonStyles?.fontSize) ?? `var(--fontSize-${typography}-fontSize)`,
+    fontWeight: pxOrUndefined(buttonStyles?.fontWeight) ?? `var(--fontWeight-${typography}-fontWeight)`,
     fontStyle:
-      buttonStyles?.fontStyle === "default"
-        ? undefined
-        : buttonStyles?.fontStyle,
+      buttonStyles?.fontStyle === "default" || !buttonStyles?.fontStyle
+        ? `var(--fontStyle-${typography}-fontStyle)`
+        : buttonStyles.fontStyle,
     textTransform:
-      buttonStyles?.textTransform === "default"
-        ? undefined
-        : buttonStyles?.textTransform,
-    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? "-0.02em",
-    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "6px",
+      buttonStyles?.textTransform === "default" || !buttonStyles?.textTransform
+        ? `var(--textTransform-${typography}-textTransform)`
+        : buttonStyles.textTransform,
+    letterSpacing: pxOrUndefined(buttonStyles?.letterSpacing) ?? `var(--letterSpacing-${typography}-letterSpacing)`,
+    borderRadius: pxOrUndefined(buttonStyles?.borderRadius) ?? "var(--borderRadius-button-borderRadius)",
     color: variant === "primary" ? "#ffffff" : accentColor,
     backgroundColor: variant === "primary" ? accentColor : "transparent",
     border: `1px solid ${accentColor}`,
@@ -120,89 +124,6 @@ const getTarget = (openInNewTab: boolean, isEditing: boolean) =>
   openInNewTab ? "_blank" : isEditing ? undefined : "_top";
 
 const styles = `
-p {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-li {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-h1 {
-  font-family: var(--fontFamily-h1-fontFamily);
-  font-size: var(--fontSize-h1-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h1-fontWeight);
-  font-style: var(--fontStyle-h1-fontStyle);
-  text-transform: var(--textTransform-h1-textTransform);
-}
-
-h2 {
-  font-family: var(--fontFamily-h2-fontFamily);
-  font-size: var(--fontSize-h2-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h2-fontWeight);
-  font-style: var(--fontStyle-h2-fontStyle);
-  text-transform: var(--textTransform-h2-textTransform);
-}
-
-h3 {
-  font-family: var(--fontFamily-h3-fontFamily);
-  font-size: var(--fontSize-h3-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h3-fontWeight);
-  font-style: var(--fontStyle-h3-fontStyle);
-  text-transform: var(--textTransform-h3-textTransform);
-}
-
-h4 {
-  font-family: var(--fontFamily-h4-fontFamily);
-  font-size: var(--fontSize-h4-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h4-fontWeight);
-  font-style: var(--fontStyle-h4-fontStyle);
-  text-transform: var(--textTransform-h4-textTransform);
-}
-
-h5 {
-  font-family: var(--fontFamily-h5-fontFamily);
-  font-size: var(--fontSize-h5-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h5-fontWeight);
-  font-style: var(--fontStyle-h5-fontStyle);
-  text-transform: var(--textTransform-h5-textTransform);
-}
-
-h6 {
-  font-family: var(--fontFamily-h6-fontFamily);
-  font-size: var(--fontSize-h6-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h6-fontWeight);
-  font-style: var(--fontStyle-h6-fontStyle);
-  text-transform: var(--textTransform-h6-textTransform);
-}
-
-a {
-  font-family: var(--fontFamily-link-fontFamily);
-  font-size: var(--fontSize-link-fontSize);
-  font-weight: var(--fontWeight-link-fontWeight);
-  font-style: var(--fontStyle-link-fontStyle);
-  line-height: 1.5;
-  text-decoration: underline;
-  text-transform: var(--textTransform-link-textTransform);
-  letter-spacing: var(--letterSpacing-link-letterSpacing);
-}
-
 .medical-specialist-outreach__inner {
   margin: 0 auto;
   display: grid;
@@ -237,7 +158,6 @@ a {
   width: fit-content;
   min-height: 48px;
   padding: 0 18px;
-  text-decoration: none;
   box-shadow: 0 10px 26px rgba(38, 14, 1, 0.08);
   transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
@@ -316,8 +236,6 @@ a {
 
 @media (max-width: 809px) {
   .medical-specialist-outreach__heading {
-    font-size: 38px !important;
-    line-height: 1.08 !important;
   }
 
   .medical-specialist-outreach__media {
@@ -359,9 +277,9 @@ const MedicalSpecialistOutreachComponent = (
         ? documentData.locale
         : "en";
   const sectionWidth =
-    pxOrUndefined(props.section.styles.contentWidth) ?? "1280px";
+    pxOrUndefined(props.section.styles.contentWidth) ?? "var(--maxWidth-pageSection-contentWidth)";
   const verticalPadding =
-    pxOrUndefined(props.section.styles.verticalPadding) ?? "16px";
+    pxOrUndefined(props.section.styles.verticalPadding) ?? "var(--padding-pageSection-verticalPadding)";
   const sectionForeground = getReadableSectionForeground(
     props.section.backgroundColor,
   );
@@ -424,9 +342,8 @@ const MedicalSpecialistOutreachComponent = (
             ...getSurfaceColorStyle(
               props.section.backgroundColor,
               streamDocument,
-              { fallbackBackgroundColor: "#fdf7f4" },
             ),
-            padding: `${verticalPadding} 40px 24px`,
+            padding: `${verticalPadding} 40px`,
           }}
         >
           <div
@@ -446,7 +363,7 @@ const MedicalSpecialistOutreachComponent = (
                 className="medical-specialist-outreach__media-offset"
                 style={{
                   borderRadius:
-                    pxOrUndefined(props.image.styles.borderRadius) ?? "20px",
+                    pxOrUndefined(props.image.styles.borderRadius) ?? "var(--borderRadius-image-borderRadius)",
                   ...getSurfaceColorStyle(
                     props.imageBackgroundColor,
                     streamDocument,
@@ -461,7 +378,7 @@ const MedicalSpecialistOutreachComponent = (
                 className="medical-specialist-outreach__media-image-wrap"
                 style={{
                   borderRadius:
-                    pxOrUndefined(props.image.styles.borderRadius) ?? "20px",
+                    pxOrUndefined(props.image.styles.borderRadius) ?? "var(--borderRadius-image-borderRadius)",
                 }}
               >
                 {outreachImage ? (
@@ -498,7 +415,7 @@ const MedicalSpecialistOutreachComponent = (
                   style={getTextStyle(
                     props.heading.styles,
                     props.heading.fontColor,
-                    '"Manrope", Inter, sans-serif',
+                    "var(--fontFamily-h2-fontFamily)",
                     sectionForeground,
                   )}
                 >
@@ -517,7 +434,7 @@ const MedicalSpecialistOutreachComponent = (
                   style={getTextStyle(
                     props.description.styles,
                     props.description.fontColor,
-                    "'Krub', 'Krub Fallback', sans-serif",
+                    "var(--fontFamily-body-fontFamily)",
                     sectionForeground,
                   )}
                 >
@@ -557,7 +474,7 @@ const MedicalSpecialistOutreachComponent = (
 
 export const MedicalSpecialistOutreach: YextComponentConfig<MedicalSpecialistOutreachProps> =
   {
-    label: msg("components.medicalSpecialistOutreach", "Outreach"),
+    label: msg("components.outreach", "Outreach"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),

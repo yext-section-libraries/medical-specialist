@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 
 import * as React from "react";
@@ -71,7 +73,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
     return props.puck.isEditing ? (
       <p
         style={{
-          fontFamily: "Arial, Helvetica, sans-serif",
+          fontFamily: "var(--fontFamily-link-fontFamily)",
           padding: "18px 24px",
         }}
       >

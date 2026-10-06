@@ -1,3 +1,5 @@
+import "../shared/typography.css";
+
 import type { SectionConfig } from "@yext/visual-editor";
 import {
   getReadableSectionForeground,
@@ -215,89 +217,6 @@ const isRichText = (value: unknown): value is RichText =>
   ("html" in value || "json" in value);
 
 const styles = `
-p {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-li {
-  font-family: var(--fontFamily-body-fontFamily);
-  font-size: var(--fontSize-body-fontSize);
-  line-height: 1.5;
-  font-weight: var(--fontWeight-body-fontWeight);
-  font-style: var(--fontStyle-body-fontStyle);
-  text-transform: var(--textTransform-body-textTransform);
-}
-
-h1 {
-  font-family: var(--fontFamily-h1-fontFamily);
-  font-size: var(--fontSize-h1-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h1-fontWeight);
-  font-style: var(--fontStyle-h1-fontStyle);
-  text-transform: var(--textTransform-h1-textTransform);
-}
-
-h2 {
-  font-family: var(--fontFamily-h2-fontFamily);
-  font-size: var(--fontSize-h2-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h2-fontWeight);
-  font-style: var(--fontStyle-h2-fontStyle);
-  text-transform: var(--textTransform-h2-textTransform);
-}
-
-h3 {
-  font-family: var(--fontFamily-h3-fontFamily);
-  font-size: var(--fontSize-h3-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h3-fontWeight);
-  font-style: var(--fontStyle-h3-fontStyle);
-  text-transform: var(--textTransform-h3-textTransform);
-}
-
-h4 {
-  font-family: var(--fontFamily-h4-fontFamily);
-  font-size: var(--fontSize-h4-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h4-fontWeight);
-  font-style: var(--fontStyle-h4-fontStyle);
-  text-transform: var(--textTransform-h4-textTransform);
-}
-
-h5 {
-  font-family: var(--fontFamily-h5-fontFamily);
-  font-size: var(--fontSize-h5-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h5-fontWeight);
-  font-style: var(--fontStyle-h5-fontStyle);
-  text-transform: var(--textTransform-h5-textTransform);
-}
-
-h6 {
-  font-family: var(--fontFamily-h6-fontFamily);
-  font-size: var(--fontSize-h6-fontSize);
-  line-height: 1.2;
-  font-weight: var(--fontWeight-h6-fontWeight);
-  font-style: var(--fontStyle-h6-fontStyle);
-  text-transform: var(--textTransform-h6-textTransform);
-}
-
-a {
-  font-family: var(--fontFamily-link-fontFamily);
-  font-size: var(--fontSize-link-fontSize);
-  font-weight: var(--fontWeight-link-fontWeight);
-  font-style: var(--fontStyle-link-fontStyle);
-  line-height: 1.5;
-  text-decoration: underline;
-  text-transform: var(--textTransform-link-textTransform);
-  letter-spacing: var(--letterSpacing-link-letterSpacing);
-}
-
 .medical-specialist-services__inner {
   width: 100%;
   margin: 0 auto;
@@ -307,7 +226,6 @@ a {
   margin: 0;
   text-align: center;
   line-height: 1.1;
-  letter-spacing: -0.05em;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -320,9 +238,9 @@ a {
 }
 
 .medical-specialist-services__card {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--colors-palette-secondary);
   border: 1px solid rgba(38, 14, 1, 0.12);
-  border-radius: 20px;
+  border-radius: var(--borderRadius-image-borderRadius);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -332,7 +250,6 @@ a {
 .medical-specialist-services__title {
   margin: 0;
   line-height: 1.1;
-  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -340,7 +257,6 @@ a {
 .medical-specialist-services__description {
   margin: 0;
   line-height: 1.5;
-  letter-spacing: -0.02em;
 }
 
 .medical-specialist-services__cta {
@@ -352,7 +268,6 @@ a {
   width: fit-content;
   min-height: 40px;
   padding: 0;
-  text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
 
@@ -376,13 +291,9 @@ a {
 
 @media (max-width: 809px) {
   .medical-specialist-services__heading {
-    font-size: 30px !important;
-    line-height: 1.08 !important;
   }
 
   .medical-specialist-services__title {
-    font-size: 22px !important;
-    line-height: 1.12 !important;
   }
 
   .medical-specialist-services__grid {
@@ -458,9 +369,9 @@ const MedicalSpecialistServicesComponent = (
               : headingFallback
   ).trim();
   const sectionWidth =
-    pxOrUndefined(props.section.styles.contentWidth) ?? "1200px";
+    pxOrUndefined(props.section.styles.contentWidth) ?? "var(--maxWidth-pageSection-contentWidth)";
   const verticalPadding =
-    pxOrUndefined(props.section.styles.verticalPadding) ?? "16px";
+    pxOrUndefined(props.section.styles.verticalPadding) ?? "var(--padding-pageSection-verticalPadding)";
   const sectionForeground = getReadableSectionForeground(
     props.section.backgroundColor,
   );
@@ -493,7 +404,6 @@ const MedicalSpecialistServicesComponent = (
             ...getSurfaceColorStyle(
               props.section.backgroundColor,
               streamDocument,
-              { fallbackBackgroundColor: "#fdf7f4" },
             ),
             padding: `${verticalPadding} 40px`,
           }}
@@ -512,7 +422,7 @@ const MedicalSpecialistServicesComponent = (
                 style={getTextStyle(
                   props.heading.styles,
                   props.heading.fontColor,
-                  '"Manrope", Inter, sans-serif',
+                  "var(--fontFamily-h2-fontFamily)",
                   sectionForeground,
                 )}
               >
@@ -561,10 +471,6 @@ const MedicalSpecialistServicesComponent = (
                         ...getSurfaceColorStyle(
                           props.cardBackgroundColor,
                           streamDocument,
-                          {
-                            fallbackBackgroundColor:
-                              "rgba(255, 255, 255, 0.45)",
-                          },
                         ),
                       }}
                     >
@@ -573,7 +479,7 @@ const MedicalSpecialistServicesComponent = (
                         style={getTextStyle(
                           props.cardTitleStyles,
                           props.cardTitleColor,
-                          '"Manrope", Inter, sans-serif',
+                          "var(--fontFamily-h2-fontFamily)",
                           cardForeground,
                         )}
                       >
@@ -584,7 +490,7 @@ const MedicalSpecialistServicesComponent = (
                         style={getTextStyle(
                           props.bodyStyles,
                           props.bodyColor,
-                          "'Krub', 'Krub Fallback', sans-serif",
+                          "var(--fontFamily-body-fontFamily)",
                           cardForeground,
                         )}
                       >
@@ -634,7 +540,7 @@ const MedicalSpecialistServicesComponent = (
 
 export const MedicalSpecialistServices: YextComponentConfig<MedicalSpecialistServicesProps> =
   {
-    label: msg("components.medicalSpecialistServices", "Services"),
+    label: msg("components.services", "Services"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),

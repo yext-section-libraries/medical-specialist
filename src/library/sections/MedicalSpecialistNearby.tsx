@@ -700,7 +700,7 @@ const MedicalSpecialistNearbyComponent = (
 
 export const MedicalSpecialistNearby: YextComponentConfig<MedicalSpecialistNearbyProps> =
   {
-    label: msg("components.medicalSpecialistNearby", "Nearby Locations Section"),
+    label: msg("components.nearby", "Nearby Locations"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -943,7 +943,7 @@ export const MedicalSpecialistNearby: YextComponentConfig<MedicalSpecialistNearb
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistNearby",
-  displayName: "Nearby Locations Section",
-  description: "Nearby Locations Section",
+  displayName: "Nearby Locations",
+  description: "Nearby Locations",
   pageSetTypes: ["ENTITY"],
 };

@@ -606,7 +606,7 @@ const MedicalSpecialistReviewsComponent = (
 
 export const MedicalSpecialistReviews: YextComponentConfig<MedicalSpecialistReviewsProps> =
   {
-    label: msg("components.reviews", "Reviews Section"),
+    label: msg("components.reviews", "Reviews"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -766,7 +766,7 @@ export const MedicalSpecialistReviews: YextComponentConfig<MedicalSpecialistRevi
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistReviews",
-  displayName: "Reviews Section",
-  description: "Reviews Section",
+  displayName: "Reviews",
+  description: "Reviews",
   pageSetTypes: ["ENTITY"],
 };

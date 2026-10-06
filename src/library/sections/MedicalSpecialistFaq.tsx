@@ -416,7 +416,7 @@ const MedicalSpecialistFaqComponent = (
 
 export const MedicalSpecialistFaq: YextComponentConfig<MedicalSpecialistFaqProps> =
   {
-    label: msg("components.faq", "FAQ Section"),
+    label: msg("components.faq", "FAQ"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -531,7 +531,7 @@ export const MedicalSpecialistFaq: YextComponentConfig<MedicalSpecialistFaqProps
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistFaq",
-  displayName: "FAQ Section",
-  description: "FAQ Section",
+  displayName: "FAQ",
+  description: "FAQ",
   pageSetTypes: ["ENTITY"],
 };

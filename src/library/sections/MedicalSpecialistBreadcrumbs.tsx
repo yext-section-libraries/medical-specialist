@@ -223,7 +223,7 @@ const MedicalSpecialistBreadcrumbsComponent = (
 
 export const MedicalSpecialistBreadcrumbs: YextComponentConfig<MedicalSpecialistBreadcrumbsProps> =
   {
-    label: msg("components.breadcrumbs", "Breadcrumbs Section"),
+    label: msg("components.breadcrumbs", "Breadcrumbs"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -310,7 +310,7 @@ export const MedicalSpecialistBreadcrumbs: YextComponentConfig<MedicalSpecialist
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistBreadcrumbs",
-  displayName: "Breadcrumbs Section",
-  description: "Breadcrumbs Section",
+  displayName: "Breadcrumbs",
+  description: "Breadcrumbs",
   pageSetTypes: ["ENTITY"],
 };

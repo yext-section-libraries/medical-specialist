@@ -214,7 +214,7 @@ const MedicalSpecialistBannerComponent: PuckComponent<
  */
 export const MedicalSpecialistBanner: YextComponentConfig<MedicalSpecialistBannerProps> =
   {
-    label: msg("components.banner", "Banner Section"),
+    label: msg("components.banner", "Banner"),
     fields: toPuckFields<MedicalSpecialistBannerProps>(
       MedicalSpecialistBannerFields,
     ),
@@ -255,7 +255,7 @@ export const MedicalSpecialistBanner: YextComponentConfig<MedicalSpecialistBanne
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistBanner",
-  displayName: "Banner Section",
-  description: "Banner Section",
+  displayName: "Banner",
+  description: "Banner",
   pageSetTypes: ["ENTITY"],
 };

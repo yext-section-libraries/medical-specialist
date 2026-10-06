@@ -765,7 +765,7 @@ const MedicalSpecialistProvidersComponent = (
 
 export const MedicalSpecialistProviders: YextComponentConfig<MedicalSpecialistProvidersProps> =
   {
-    label: msg("components.medicalSpecialistProviders", "Providers Section"),
+    label: msg("components.providers", "Providers"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -998,7 +998,7 @@ export const MedicalSpecialistProviders: YextComponentConfig<MedicalSpecialistPr
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistProviders",
-  displayName: "Providers Section",
-  description: "Providers Section",
+  displayName: "Providers",
+  description: "Providers",
   pageSetTypes: ["ENTITY"],
 };

@@ -137,7 +137,7 @@ const MedicalSpecialistMapComponent = (
 
 export const MedicalSpecialistMap: YextComponentConfig<MedicalSpecialistMapProps> =
   {
-    label: msg("components.medicalSpecialistMap", "Map Section"),
+    label: msg("components.map", "Map"),
     fields: {
       section: {
         label: msg("fields.section", "Section"),
@@ -215,7 +215,7 @@ export const MedicalSpecialistMap: YextComponentConfig<MedicalSpecialistMapProps
 
 export const config: SectionConfig = {
   id: "MedicalSpecialistMap",
-  displayName: "Map Section",
-  description: "Map Section",
+  displayName: "Map",
+  description: "Map",
   pageSetTypes: ["ENTITY"],
 };

@@ -386,5 +386,6 @@
   "socialLinks": "Sosyal medya bağlantıları",
   "useOurLocatorToFindALocationNearYou": "Yakınınızdaki bir yer bulmak için bulucumuzu kullanın",
   "visitPage": "Sayfayı Ziyaret Edin",
-  "visitPageForName": "{{name}} Sayfasını Ziyaret Edin"
+  "visitPageForName": "{{name}} Sayfasını Ziyaret Edin",
+  "mapRequiresWebGL": "WebGL kullanılamadığı için harita kullanılamıyor."
 }

@@ -391,5 +391,6 @@
   "socialLinks": "Links de redes sociais",
   "useOurLocatorToFindALocationNearYou": "Use nosso localizador para encontrar um local perto de você",
   "visitPage": "Visite a página",
-  "visitPageForName": "Visite a página de {{name}}"
+  "visitPageForName": "Visite a página de {{name}}",
+  "mapRequiresWebGL": "O mapa não está disponível porque o WebGL não está disponível."
 }

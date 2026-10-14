@@ -396,5 +396,6 @@
   "socialLinks": "Odkazy na sociálne siete",
   "useOurLocatorToFindALocationNearYou": "Pomocou nášho vyhľadávača nájdete miesto vo vašom okolí",
   "visitPage": "Navštíviť stránku",
-  "visitPageForName": "Navštíviť stránku pre {{name}}"
+  "visitPageForName": "Navštíviť stránku pre {{name}}",
+  "mapRequiresWebGL": "Mapa nie je dostupná, pretože WebGL nie je k dispozícii."
 }

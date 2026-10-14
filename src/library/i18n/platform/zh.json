@@ -381,5 +381,6 @@
   "socialLinks": "社交媒体链接",
   "useOurLocatorToFindALocationNearYou": "使用我们的定位器找到您附近的位置",
   "visitPage": "访问页面",
-  "visitPageForName": "访问 {{name}} 页面"
+  "visitPageForName": "访问 {{name}} 页面",
+  "mapRequiresWebGL": "由于 WebGL 不可用，无法显示地图。"
 }

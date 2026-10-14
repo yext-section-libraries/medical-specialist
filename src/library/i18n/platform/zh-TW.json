@@ -381,5 +381,6 @@
   "socialLinks": "社群媒體連結",
   "useOurLocatorToFindALocationNearYou": "使用我們的定位器找到您附近的位置",
   "visitPage": "訪問頁面",
-  "visitPageForName": "造訪 {{name}} 頁面"
+  "visitPageForName": "造訪 {{name}} 頁面",
+  "mapRequiresWebGL": "由於 WebGL 無法使用，無法顯示地圖。"
 }

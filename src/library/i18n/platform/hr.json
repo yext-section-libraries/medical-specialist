@@ -142,6 +142,7 @@
     "logoImage": "Slika logotipa",
     "longitude": "Dužina",
     "map": "Karta",
+    "mapStartingZoom": "Početna razina zumiranja karte",
     "mapboxMapStyle": "Stil karte Mapbox",
     "mapStyle": "Stil karte",
     "metaColor": "Metapodaci — Boja",

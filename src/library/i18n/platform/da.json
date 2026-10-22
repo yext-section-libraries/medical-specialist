@@ -142,6 +142,7 @@
     "logoImage": "Logobillede",
     "longitude": "Længde",
     "map": "Kort",
+    "mapStartingZoom": "Kortets startzoom",
     "mapboxMapStyle": "Mapbox-kortstil",
     "mapStyle": "Kortstil",
     "metaColor": "Metadata — Farve",

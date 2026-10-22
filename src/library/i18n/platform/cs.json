@@ -142,6 +142,7 @@
     "logoImage": "Obrázek loga",
     "longitude": "Zeměpisná délka",
     "map": "Mapa",
+    "mapStartingZoom": "Počáteční přiblížení mapy",
     "mapboxMapStyle": "Styl mapy Mapbox",
     "mapStyle": "Styl mapy",
     "metaColor": "Metadata — Barva",

@@ -142,6 +142,7 @@
     "logoImage": "徽标图片",
     "longitude": "经度",
     "map": "地图",
+    "mapStartingZoom": "地图初始缩放级别",
     "mapboxMapStyle": "Mapbox 地图样式",
     "mapStyle": "地图样式",
     "metaColor": "元数据 — 颜色",

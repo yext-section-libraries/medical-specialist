@@ -54,6 +54,7 @@
     "aspectRatio": "Aspektforhold",
     "authorColor": "Forfatter — Farge",
     "authorStyles": "Forfatter — Stiler",
+    "autoSearchOnMapMove": "Søk automatisk på kartbevegelse",
     "backgroundColor": "Bakgrunnsfarge",
     "backgroundFill": "Bakgrunnsfarge — Fyll",
     "bannerText": "Bannertekst",

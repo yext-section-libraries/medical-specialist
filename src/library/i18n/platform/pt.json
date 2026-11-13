@@ -54,6 +54,7 @@
     "aspectRatio": "Proporção de aspecto",
     "authorColor": "Autor — Cor",
     "authorStyles": "Autor — Estilos",
+    "autoSearchOnMapMove": "Pesquisar automaticamente no movimento do mapa",
     "backgroundColor": "Cor de fundo",
     "backgroundFill": "Cor de fundo — Preenchimento",
     "bannerText": "Texto do banner",

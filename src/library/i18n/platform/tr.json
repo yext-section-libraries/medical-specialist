@@ -54,6 +54,7 @@
     "aspectRatio": "En boy oranı",
     "authorColor": "Yazar — Renk",
     "authorStyles": "Yazar — Stiller",
+    "autoSearchOnMapMove": "Harita Hareketinde Otomatik Arama",
     "backgroundColor": "Arka plan rengi",
     "backgroundFill": "Arka plan rengi — Dolgu",
     "bannerText": "Banner Metni",

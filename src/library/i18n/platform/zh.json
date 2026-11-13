@@ -54,6 +54,7 @@
     "aspectRatio": "纵横比",
     "authorColor": "作者 — 颜色",
     "authorStyles": "作者 — 样式",
+    "autoSearchOnMapMove": "地图移动自动搜索",
     "backgroundColor": "背景颜色",
     "backgroundFill": "背景颜色 — 填充",
     "bannerText": "横幅文本",

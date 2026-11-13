@@ -54,6 +54,7 @@
     "aspectRatio": "Kuvasuhde",
     "authorColor": "Tekijä — Väri",
     "authorStyles": "Tekijä — Tyylit",
+    "autoSearchOnMapMove": "Hae automaattisesti kartan liikkeestä",
     "backgroundColor": "Taustaväri",
     "backgroundFill": "Taustaväri — Täyttö",
     "bannerText": "Banneriteksti",

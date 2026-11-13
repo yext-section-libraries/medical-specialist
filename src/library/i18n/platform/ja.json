@@ -54,6 +54,7 @@
     "aspectRatio": "アスペクト比",
     "authorColor": "投稿者 — 色",
     "authorStyles": "投稿者 — スタイル",
+    "autoSearchOnMapMove": "地図移動時に自動検索",
     "backgroundColor": "背景色",
     "backgroundFill": "背景色 — 塗りつぶし",
     "bannerText": "バナーテキスト",

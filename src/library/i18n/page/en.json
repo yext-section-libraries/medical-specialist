@@ -34,6 +34,7 @@
   "locationsWithinDistanceOf_other": "{{count}} locations within {{distance}} {{unit}} of \"{{name}}\"",
   "logo": "Logo",
   "mapRequiresOptIn": "This map can only be displayed if cookies are enabled",
+  "mapRequiresWebGL": "The map is unavailable because WebGL is unavailable.",
   "mile_one": "mile",
   "mile_other": "mile",
   "mile_zero": "mile",

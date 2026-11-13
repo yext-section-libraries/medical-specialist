@@ -283,7 +283,9 @@
                 "showDistanceOptions": false
               },
               "resultCard": [],
-              "distanceDisplay": "distanceFromUser"
+              "distanceDisplay": "distanceFromUser",
+              "showDistanceUnitToggle": false,
+              "defaultDistanceUnit": "browserLanguage"
             }
           }
         ]

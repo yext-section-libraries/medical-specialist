@@ -54,6 +54,7 @@
     "aspectRatio": "Kraštinių santykis",
     "authorColor": "Autorius — Spalva",
     "authorStyles": "Autorius — Stiliai",
+    "autoSearchOnMapMove": "Automatiškai ieškoti judėjimo žemėlapyje",
     "backgroundColor": "Fono spalva",
     "backgroundFill": "Fono spalva — Užpildas",
     "bannerText": "Reklamjuostės tekstas",

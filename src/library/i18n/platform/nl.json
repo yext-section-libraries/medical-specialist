@@ -54,6 +54,7 @@
     "aspectRatio": "Beeldverhouding",
     "authorColor": "Auteur — Kleur",
     "authorStyles": "Auteur — Stijlen",
+    "autoSearchOnMapMove": "Automatisch zoeken op kaartbeweging",
     "backgroundColor": "Achtergrondkleur",
     "backgroundFill": "Achtergrondkleur — Opvulling",
     "bannerText": "Bannertekst",

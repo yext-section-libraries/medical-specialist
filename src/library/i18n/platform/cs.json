@@ -54,6 +54,7 @@
     "aspectRatio": "Poměr stran",
     "authorColor": "Autor — Barva",
     "authorStyles": "Autor — Styly",
+    "autoSearchOnMapMove": "Automaticky hledat při pohybu na mapě",
     "backgroundColor": "Barva pozadí",
     "backgroundFill": "Barva pozadí — Výplň",
     "bannerText": "Text banneru",

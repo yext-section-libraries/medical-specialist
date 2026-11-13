@@ -54,6 +54,7 @@
     "aspectRatio": "Kuvasuhe",
     "authorColor": "Autor — Värv",
     "authorStyles": "Autor — Stiilid",
+    "autoSearchOnMapMove": "Otsige automaatselt kaardil liikumist",
     "backgroundColor": "Taustvärv",
     "backgroundFill": "Taustvärv — Täide",
     "bannerText": "Bänneri tekst",

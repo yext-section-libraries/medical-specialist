@@ -54,6 +54,7 @@
     "aspectRatio": "Proporzioni",
     "authorColor": "Autore — Colore",
     "authorStyles": "Autore — Stili",
+    "autoSearchOnMapMove": "Cerca automaticamente sul movimento della mappa",
     "backgroundColor": "Colore di sfondo",
     "backgroundFill": "Colore di sfondo — Riempimento",
     "bannerText": "Testo banner",

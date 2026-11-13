@@ -54,6 +54,7 @@
     "aspectRatio": "Oldal arány",
     "authorColor": "Szerző — Szín",
     "authorStyles": "Szerző — Stílusok",
+    "autoSearchOnMapMove": "Automatikus keresés a térképen, mozgás",
     "backgroundColor": "Háttérszín",
     "backgroundFill": "Háttérszín — Kitöltés",
     "bannerText": "Szalagszöveg",

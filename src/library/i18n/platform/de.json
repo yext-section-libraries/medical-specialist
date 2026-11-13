@@ -54,6 +54,7 @@
     "aspectRatio": "Seitenverhältnis",
     "authorColor": "Autor — Farbe",
     "authorStyles": "Autor — Styles",
+    "autoSearchOnMapMove": "Automatische Suche nach Kartenbewegung",
     "backgroundColor": "Hintergrundfarbe",
     "backgroundFill": "Hintergrundfarbe — Füllung",
     "bannerText": "Bannertext",
